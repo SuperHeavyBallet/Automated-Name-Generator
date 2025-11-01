@@ -11,9 +11,14 @@ export type themePool = {
         right: NonEmptyArray<string>;
     };
     titles: NonEmptyArray<string>;
+    titlePieces?: {
+        left: NonEmptyArray<string>;
+        right: NonEmptyArray<string>;
+        comboWeight?: number;
+    };
     patterns: NonEmptyArray<string>;
 };
 export declare const FORGE: themePool;
 export declare const SEA: themePool;
 export declare const EARTHY: themePool;
-//# sourceMappingURL=earthy.data.d.ts.map
+//# sourceMappingURL=themes.data.d.ts.map

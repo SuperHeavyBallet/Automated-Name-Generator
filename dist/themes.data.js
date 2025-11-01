@@ -179,9 +179,50 @@ export const EARTHY = {
         // of Titles
         "of Fell Times", "of Stonemounds", "of Elder Storms"
     ],
+    titlePieces: {
+        left: [
+            // stone, soil, flora, and natural textures
+            "Stone", "Rock", "Clay", "Dust", "Loam", "Grit", "Flint", "Shale", "Slate", "Basalt", "Gravel", "Silt", "Pebble", "Mire",
+            "Moss", "Lichen", "Root", "Thorn", "Briar", "Vine", "Fern", "Weed", "Spore", "Mold", "Fung", "Murk", "Ash", "Ember",
+            // landforms and terrain
+            "Hill", "Vale", "Glen", "Crag", "Ridge", "Tor", "Cairn", "Barrow", "Wold", "Hollow", "Cave", "Pit", "Deep", "Den",
+            "Burrow", "Well", "Spring", "Brook", "Stream", "Field", "Plain", "Ravine", "Gorge", "Meadow", "Trail", "Path", "Road",
+            "River", "Way",
+            // craft, forge, and hearth
+            "Forge", "Anvil", "Hammer", "Tongs", "Bellows", "Spade", "Pick", "Plow", "Wheel", "Cart", "Chisel", "Brick", "Pot",
+            "Oven", "Kiln", "Coal", "Smoke", "Ashen", "Cinder", "Char",
+            // life and mythic body elements
+            "Bone", "Skull", "Horn", "Hide", "Fang", "Talon", "Shell", "Pelt", "Tooth", "Claw", "Heart", "Blood", "Seed", "Bark",
+            // poetic or weathered abstractions
+            "Rain", "Snow", "Frost", "Mist", "Fog", "Storm", "Dew", "Drift", "Shade", "Blight", "Sun", "Wind", "Rime", "Echo",
+            "Chill", "Cloud", "Heat", "Grey", "Dark", "Low", "High", "Old", "Ancient", "Silent", "Bound", "Lost", "Woken", "Grave",
+            "Hearth", "Home", "Iron", "Bronze", "Copper",
+            // Assorted
+            "Last", "Broken", "Smit", "Cull", "Call", "Fond", "Grut", "Kind", "Abhor", "Sharp", "Soft", "Wind", "Ember",
+            "Kindle", "Wither", "Worry"
+        ],
+        right: [
+            // professions and crafts
+            "smith", "wright", "maker", "hewer", "carver", "forger", "binder", "mender", "weaver", "spinner", "tiller", "miller",
+            "planter", "grower", "digger", "miner", "brewer", "tanner", "potter", "baker", "founder", "builder",
+            // guardians and wanderers
+            "warden", "keeper", "watcher", "ward", "guard", "seeker", "wander", "walker", "runner", "scout", "pathfinder",
+            "wayfarer", "delver", "dweller", "hermit", "herald", "tender", "guardian", "minder", "din", "brook",
+            // poetic, organic, and elemental
+            "born", "bound", "blood", "heart", "soul", "fang", "claw", "horn", "song", "root", "bark", "bloom", "thorn", "stone",
+            "moss", "ash", "ember", "flame", "spark", "dust", "shade", "veil", "dream", "sleep", "call", "cry",
+            // ranks and spiritual titles
+            "thane", "lord", "chief", "elder", "saint", "seer", "caller", "speaker", "hand", "foot", "eye", "voice", "tongue",
+            "vein", "forge", "brand", "mark", "helm", "mantle", "crown", "spirit",
+            // mythic verbs and identities
+            "breaker", "riser", "bearer", "bringer", "eater", "drinker", "sower", "reaper", "harrower", "bender", "wrought",
+            "forged", "shaped", "shaper", "maker", "tamer", "waker", "dreamer", "fallen"
+        ],
+        comboWeight: 1 // 50/50 chance of fixed literal title or mixed construct
+    },
     patterns: [
         // simple to pronounce earthy shapes
         "CVC", "CVCC", "SCV", "CVCV", "CVCVC", "SCVC", "SCVCV", "CVCEC"
     ],
 };
-//# sourceMappingURL=earthy.data.js.map
+//# sourceMappingURL=themes.data.js.map

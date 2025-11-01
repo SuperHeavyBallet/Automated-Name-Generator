@@ -1,6 +1,6 @@
-export type Theme = "earthy";
+export type Theme = "earthy" | "sea" | "forge";
 export type Gender = "male" | "female";
-export type Format = "single" | "single+last" | "single+title";
+export type Format = "single" | "single+last" | "single+title" | "random";
 export type NameOptions = {
     theme?: Theme;
     gender?: Gender;

@@ -4,14 +4,11 @@ export function pick<T>(arr: NonEmptyArray<T>, rnd: () => number): T {
     
     const len = arr.length;
     const i = Math.floor(rnd() * len);
-
-if (i < 0 || i >= len)
-{
-    throw new Error(`RNG produced out-of-range index: ${i} (len=${len})`);
-}
-
-return arr[i] as T; // or: return arr[i]!;
-
+    if (i < 0 || i >= len)
+    {
+        throw new Error(`RNG produced out-of-range index: ${i} (len=${len})`);
+    }
+    return arr[i] as T; // or: return arr[i]!;
 }
 
 export function capitalize(s: string) : string {
