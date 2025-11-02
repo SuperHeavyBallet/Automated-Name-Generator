@@ -1,5 +1,5 @@
 import { pick, cleanName, capitalize } from "./util.js";
-import { EARTHY, FORGE, SEA } from "./themes.data.js";
+import { EARTH } from "./themes.data.js";
 import { withinBudget } from "./limits.js";
 import { insertVowelBreaks, withLinkingVowel } from "./vowels.js";
 export function realizePattern(pattern, pools, rnd, gender, firstLimits) {

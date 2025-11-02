@@ -1,6 +1,6 @@
 import type { RNG } from "./rng.js";
 import { pick, type NonEmptyArray, cleanName, capitalize } from "./util.js";
-import { EARTHY, FORGE, SEA } from "./themes.data.js";
+import { EARTH } from "./themes.data.js";
 import type { Limits } from "./limits.js";
 import { withinBudget } from "./limits.js";
 import { insertVowelBreaks, withLinkingVowel } from "./vowels.js";
@@ -11,7 +11,7 @@ export type Format = "single" | "single+last" | "single+title" | "random";
 
 
 
-type Pools = typeof EARTHY;
+type Pools = typeof EARTH;
 
 
 

@@ -1,7 +1,7 @@
 import { makeRNG } from "./rng.js";
 import { buildName } from "./builder.js";
   
-export type Theme = "earthy" | "sea" | "forge";
+export type Theme = "earth" | "sea" | "forge";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
@@ -14,7 +14,7 @@ export type NameOptions = {
 
 export function generateName(opts: NameOptions = {}): string {
     const {
-        theme = "earthy",
+        theme = "earth",
         gender = "male",
         format = "single",
         seed

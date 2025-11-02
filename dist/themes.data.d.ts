@@ -20,5 +20,5 @@ export type themePool = {
 };
 export declare const FORGE: themePool;
 export declare const SEA: themePool;
-export declare const EARTHY: themePool;
+export declare const EARTH: themePool;
 //# sourceMappingURL=themes.data.d.ts.map

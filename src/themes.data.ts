@@ -71,6 +71,104 @@ export const FORGE: themePool = {
     "the Foundry Ghost","the Slagforged","the Machinebound","the Cinderwalker","the Last Spark"
   ] as const,
 
+  titlePieces: {
+    left: [
+        // raw materials and metals
+  "Iron","Steel","Bronze","Brass","Copper","Cinder","Coal","Ash","Flame","Fire",
+  "Forge","Hammer","Anvil","Gear","Cog","Smoke","Steam","Spark","Ember","Soot",
+  "Furnace","Blaze","Char","Fuel","Oil","Rivet","Chain","Piston","Plate","Wire",
+  "Nail","Beam","Slag","Powder","Bolt","Torch","Gun","Bullet","Rust","Ore","Ingot",
+  "Smelt","Cast","Alloy","Bar","Metal","Scrap","Ironclad","Molten","Crucible",
+  "Tongs","Clamp","Clamp","Bellows","Turbine","Rod","Pipe","Rivet","Razor","Saw",
+  "Grinder","Drill","Sprocket","Lever","Mach","Mill","Wheel","Track","Core","Sparkplug",
+
+   // heat, light, combustion
+   "Flame","Blaze","Inferno","Pyre","Kindle","Torch","Cinder","Ashen","Charred","Smoulder",
+   "Scorch","Heat","Burn","Fume","Gleam","Glow","Radiant","Solar","Ignis","Fervor","Core",
+   "Lava","Magma","Fume","Coal","Molten","Sear","Smelt","Smog","Tempest","Weld","Wick",
+ 
+   // craftsmanship, smithing, making
+   "Forge","Hammer","Anvil","Tongs","Bellows","Tool","Mallet","Pincer","Weld","Joint",
+   "Bolt","Chain","Gear","Cog","Axle","Spindle","Frame","Cast","Mold","Furnace","Smith",
+   "Foundry","Mill","Crank","Rod","Piston","Plate","Lathe","Drill","Vice","Wedge","Clamp",
+   "Press","Fitter","Engineer","Craft","Mech","Mach","Engine","Boiler","Valve","Kiln",
+   "Workshop","Temple","Shrine","Chamber","Vault","Press","Smelter","Foundry","Mason",
+ 
+   // mythic or divine fire motifs
+   "Sun","Solar","Infernal","Heaven","Hell","Star","Meteor","Comet","Falling","Red",
+   "Golden","Blazing","Burning","Sacred","Holy","Hellforged","Storm","Thunder","Sparked",
+   "God","Titan","Devil","Saint","Sainted","Angel","Demon","Flare","Glory","Blessed",
+   "Oath","Vow","Covenant","Judged","Trial","Eternal","Fallen","Bound","Brand","Mark",
+ 
+   // industrial and war-forge imagery
+   "Engine","Machine","Gunner","Blast","Powder","Bullet","Shot","Barrel","Cannon","Gun",
+   "Tank","Chamber","Charge","Reactor","Steelborn","Ironbound","War","Siege","Titan",
+   "Piston","Steam","Boiler","Smoke","Spark","Crank","Sprocket","Rod","Frame","Plating",
+   "Core","Crucible","Magma","Power","Fury","Wrath","Pulse","Force","Gear","Piston",
+ 
+   // abstract & poetic tones
+   "Red","Black","Dark","Bright","Silent","Feral","Forged","Bound","Broken","Struck",
+   "Shattered","Tempered","Risen","Molten","Cold","Hot","Gilded","Wrought","Burning",
+   "Smoking","Bitter","Stained","Welded","Carved","Cut","Etched","Marked","Branded",
+   "Gleaming","Scarred","Scorched","Vulcan","Aether","Ablaze","Kindled","Lit","Fallen",
+   "Shining","Chained","Oiled","Gutted","Rusted","Refined","Hardened","Wrought","Woken",
+ 
+   // esoteric or linguistic flavor
+   "Vulcan","Ferrum","Pyra","Caldera","Ferro","Smite","Furn","Ignar","Helm","Thane",
+   "Ankar","Karn","Mor","Dur","Rak","Gath","Brim","Zor","Vald","Thor","Durak","Gan",
+   "Zirn","Varn","Gor","Morr","Durn","Rauth","Korr","Grim","Thuld","Krak","Voth","Sarn"
+    ] as const,
+
+    right: [
+      // professions & crafts
+  "smith","wright","maker","founder","forger","molder","smelter","welder","binder",
+  "caster","engraver","hewer","hammer","tinker","builder","joiner","mechanist",
+  "engineer","artisan","crafter","artisan","mason","riveter","temperer","chainer",
+  "fitter","worker","shaper","melder","plater","sealer","seamer","grinder","turner",
+  "molder","roller","fuser","coiler","burnisher","polisher","refiner","etcher","smither",
+
+  // guardians, leaders, & mythic ranks
+  "warden","keeper","watcher","protector","guardian","lord","thane","chief","captain",
+  "seer","saint","prophet","king","queen","bishop","hand","master","patron","idol",
+  "chosen","father","mother","son","daughter","child","bastion","knight","monk",
+  "scribe","apostle","acolyte","priest","speaker","herald","seer","judge","watch",
+  "sentry","watcher","bound","oath","vow","brand","scar","mark","mantle","crown","helm",
+  "mask","tongue","voice","eye","gaze","shadow","spirit","soul","flame","ghost",
+
+  // elemental & poetic suffixes
+  "fire","flame","ember","ash","smoke","spark","glow","heat","blaze","fume","soot",
+  "burn","char","core","heart","soul","fury","wrath","rage","storm","blast","bolt",
+  "pulse","current","flow","gleam","flare","shine","glimmer","light","forge","weld",
+  "magma","lava","coal","iron","steel","brass","cinder","slag","furnace","pyre",
+  "inferno","ember","spark","brand","mark","scar","tide","smelt","heat","fever",
+
+  // mythic verbs and epithets
+  "breaker","bearer","bringer","seeker","caller","binder","wrought","forged","waker",
+  "walker","wander","mender","risen","fallen","bender","riser","turner","shaper",
+  "sower","drinker","eater","devourer","harrower","tamer","striker","reaper","hammered",
+  "wielder","fused","melded","temper","keeper","striker","wrought","found","bound",
+
+  // industrial and war imagery
+  "machine","engine","boiler","piston","gear","sprocket","chain","grip","jaw","core",
+  "spark","blast","barrel","shell","charge","cog","bolt","gun","shot","flame","blast",
+  "runner","driver","marcher","walker","crusher","brawler","breaker","reaver","warden",
+  "warlord","captain","marshal","gunner","rifler","powderhand","shard","plate","shell",
+  "shield","hammer","anvil","forge","chamber","arm","gauntlet","hand","fist",
+
+  // spiritual & infernal tones
+  "saint","angel","devil","demon","prophet","apostle","seraph","idol","witness","judge",
+  "penitent","martyr","bound","fallen","redeemed","cursed","blessed","vowed","oathed",
+  "burned","branded","scarred","forgiven","judged","doomed","crowned","torched",
+  "saint","spirit","ghost","specter","shade","infernal","holy","divine","unhallowed",
+
+  // abstract / symbolic
+  "born","blood","bound","bane","brand","mark","song","dream","shade","vein","hand",
+  "tongue","voice","eye","heart","soul","crown","helm","mantle","veil","wake","cry",
+  "howl","chant","call","echo","gift","oath","spark","chain","flame","fire","light",
+  "forge","steel","iron","gear","spark","weld","core","pulse","torch"
+    ] as const,
+  },
+
   patterns: [
     // clipped, hammerlike patterns — lots of stops and hard vowels
     "CVC","CVCC","SCVC","CVCV","SVC","CVVC","SCVCV","CVCEC","CVCCV","SVCC"
@@ -119,7 +217,35 @@ export const SEA: themePool = {
     "the Windtouched","the Foam-Singer","the Pearlforged","the Drowned","the Coral Seer",
     "the Mariner","the Longshore","the Whale-Friend","the Mistbound","the Stormwrought"
   ] as const,
+  titlePieces: {
+    left: [
+        "Salt","Wave","Tide","Drift","Storm","Mist","Foam","Coral","Reef","Shell",
+  "Spray","Wind","Gale","Current","Deep","Anchor","Keel","Sail","Harbor","Bay",
+  "Cove","Lagoon","Pearl","Marsh","Brook","Spume","Dew","Rill","Whale","Shark",
+  "Fin","Kraken","Serpent","Levi","Tempest","Swell","Breaker","Fog","Sea","Blue",
+  "Drown","Mariner","Rime","Cold","Grey","Sunken","Moon","Star","Compass","North",
+  "South","East","West","Silver","Foam","Surge","Whisper","Echo","Dune","Corvid",
+  "Oar","Deck","Hold","Bilge","Plank","Harpoon","Cannon","Gull","Crow","Albatross",
+  "Barnacle","Sponge","Brine","Ship","Fleet","Voyage","Mast","Wreck","Rudder","Reefed",
+  "Tangle","Line","Knot","Cord","Net","Hook","Bait","Catch","Wander","Rover","Privateer",
+  "Corsair","Rogue","Black","Red","Iron","Golden","Broken","Lost","Sun","Moonlit",
+  "Levia", 
+    ] as const,
+    right: [
+      "wave", "beam", "brok", "weave", "slip", "shore", "breaker","caller","keeper",
+      "singer","walker","weaver","watch","mender","rider","sailor",
+  "diver","binder","fisher","hunter","mariner","seeker","finder","flow","song","chant",
+  "foam","crest","heart","hand","kin","tide","gleam","shard","fang","tooth","veil","cry",
+  "brand","born","bound","blood","dream","wake","shade","ghost","spirit","tongue","voice",
+  "seer","eye","watcher","warden","keeper","captain","mate","bosun","pilot","gunner","cook",
+  "swain","rigger","reever","wrecker","raider","reaver","runner","strider","slinger","shaper",
+  "sower","drifter","wander","rover","buoy","haunt","hauler","forged","wrought","tamer",
+  "shanty","chant","call","prayer","anchor","helm","chain","oath","mark","bane","crown","born",
+  "child","soul","bringer","dreamer","breaker", ""
 
+    ] as const,
+    comboWeight: 1// 50/50 chance of fixed literal title or mixed construct
+    },
   patterns: [
     // more fluid, open phoneme shapes
     "CVV","CVC","SCV","CVCV","CVVC","SCVCV","CVCE","CVVCV","SVCV"
@@ -127,7 +253,7 @@ export const SEA: themePool = {
 
 }
 
-export const EARTHY: themePool = {
+export const EARTH: themePool = {
     consonants: ["b","d","f","g","h","k","l","m","n","r","s","t","v","w","y","z"],
     vowels: ["a","e","i","o","u"],
     clustersStart: ["br","dr","gr","kr","st","str","tr","wr","th","sk"] as const,
@@ -248,7 +374,7 @@ export const EARTHY: themePool = {
           "River", "Way",
           // craft, forge, and hearth
           "Forge","Anvil","Hammer","Tongs","Bellows","Spade","Pick","Plow","Wheel","Cart","Chisel","Brick","Pot",
-          "Oven","Kiln","Coal","Smoke","Ashen","Cinder","Char",
+          "Oven","Kiln","Coal","Smoke","Ashen","Cinder","Char", "Dam",
           // life and mythic body elements
           "Bone","Skull","Horn","Hide","Fang","Talon","Shell","Pelt","Tooth","Claw","Heart","Blood","Seed","Bark",
           // poetic or weathered abstractions
@@ -257,7 +383,8 @@ export const EARTHY: themePool = {
           "Hearth","Home","Iron","Bronze","Copper",
           // Assorted
           "Last", "Broken", "Smit", "Cull", "Call", "Fond", "Grut", "Kind", "Abhor", "Sharp", "Soft", "Wind", "Ember",
-          "Kindle", "Wither", "Worry"
+          "Kindle", "Wither", "Worry", "Dim", "Ever", "Bright", "All", "Oft", "Ne'er", "Low", "Wisp", "Dusk", "Wind",
+          "Rain", "Storm"
       ] as const,
       right:[
            // professions and crafts
@@ -274,7 +401,9 @@ export const EARTHY: themePool = {
           "vein","forge","brand","mark","helm","mantle","crown","spirit",
           // mythic verbs and identities
           "breaker","riser","bearer","bringer","eater","drinker","sower","reaper","harrower","bender","wrought",
-          "forged","shaped","shaper","maker","tamer","waker","dreamer","fallen"
+          "forged","shaped","shaper","maker","tamer","waker","dreamer","fallen",
+
+          "known", "knowing", "keen", "soft", "wood", "soot", "dust"
 
       ] as const,
       comboWeight: 1// 50/50 chance of fixed literal title or mixed construct

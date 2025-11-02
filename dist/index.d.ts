@@ -1,4 +1,4 @@
-export type Theme = "earthy" | "sea" | "forge";
+export type Theme = "earth" | "sea" | "forge";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 export type NameOptions = {

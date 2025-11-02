@@ -1,5 +1,5 @@
 import { pick, capitalize } from "./util.js";
-import { EARTHY, FORGE, SEA } from "./themes.data.js";
+import { EARTH, FORGE, SEA } from "./themes.data.js";
 import { realizePattern, } from "./pattern-realizer.js";
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
 import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
@@ -7,7 +7,7 @@ import { isPronounceable } from "./pronunciation.js";
 import { makeTitle } from "./titles.js";
 function materialFor(theme) {
     switch (theme) {
-        case "earthy": return EARTHY;
+        case "earth": return EARTH;
         case "sea": return SEA;
         case "forge": return FORGE;
     }

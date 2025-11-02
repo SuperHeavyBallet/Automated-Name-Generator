@@ -1,6 +1,6 @@
 import type { RNG } from "./rng.js";
 import { pick, type NonEmptyArray, capitalize } from "./util.js";
-import { EARTHY, FORGE, SEA } from "./themes.data.js";
+import { EARTH, FORGE, SEA } from "./themes.data.js";
 import { realizePattern, } from "./pattern-realizer.js";
 
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
@@ -8,15 +8,15 @@ import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
 import { isPronounceable } from "./pronunciation.js";
 import { makeTitle } from "./titles.js";
 
-export type Theme = "earthy" | "sea" | "forge";
+export type Theme = "earth" | "sea" | "forge";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
-type Pools = typeof EARTHY;
+type Pools = typeof EARTH;
 
 function materialFor(theme: Theme): Pools {
     switch (theme){
-        case "earthy" : return EARTHY;
+        case "earth" : return EARTH;
         case "sea" : return SEA;
         case "forge" : return FORGE;
     }

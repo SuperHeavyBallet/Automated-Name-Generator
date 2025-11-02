@@ -1,9 +1,18 @@
 import { pick, type NonEmptyArray, capitalize } from "./util.js";
-import { EARTHY } from "./themes.data.js";
+import { EARTH } from "./themes.data.js";
 import type { RNG } from "./rng.js";
 
-type Pools = typeof EARTHY;
-const toTitle = (s: string) => s[0] === "t" ? s : `the ${s}`;
+type Pools = typeof EARTH;
+
+
+const toTitle = (s: string, rnd: RNG) => {
+    // If it already begins with "the" or "of", leave as-is
+    if (/^(the|of)\b/i.test(s)) return s;
+  
+    // Otherwise, pick between "the" and "of"
+    const prefix = rnd() < 0.8 ? "the" : "of";
+    return `${prefix} ${s}`;
+  };
 
 export function makeTitle(pools: Pools, rnd: RNG): string {
   const tp = pools.titlePieces;
@@ -13,7 +22,7 @@ export function makeTitle(pools: Pools, rnd: RNG): string {
     const L = pick(tp.left as NonEmptyArray<string>, rnd);
     const R = pick(tp.right as NonEmptyArray<string>, rnd);
     // no smoothing, no hyphen; titles are literal epithets
-    return toTitle(capitalize(`${L}${R}`));
+    return toTitle(capitalize(`${L}${R}`), rnd);
   }
 
   // otherwise pick a fixed literal

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { generateName } from "./index.js";
 test("returns a non empty string", () => {
-    const name = generateName({ theme: "earthy", gender: "male", format: "single" });
+    const name = generateName({ theme: "earth", gender: "male", format: "single" });
     assert.equal(typeof name, "string");
     assert.ok(name.length > 0);
     console.log(name);
