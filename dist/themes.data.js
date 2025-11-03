@@ -82,7 +82,8 @@ export const FORGE = {
             // esoteric or linguistic flavor
             "Vulcan", "Ferrum", "Pyra", "Caldera", "Ferro", "Smite", "Furn", "Ignar", "Helm", "Thane",
             "Ankar", "Karn", "Mor", "Dur", "Rak", "Gath", "Brim", "Zor", "Vald", "Thor", "Durak", "Gan",
-            "Zirn", "Varn", "Gor", "Morr", "Durn", "Rauth", "Korr", "Grim", "Thuld", "Krak", "Voth", "Sarn"
+            "Zirn", "Varn", "Gor", "Morr", "Durn", "Rauth", "Korr", "Grim", "Thuld", "Krak", "Voth", "Sarn",
+            "Smold", "Smed", "Heff", "Gren", "Gruff"
         ],
         right: [
             // professions & crafts
@@ -126,6 +127,7 @@ export const FORGE = {
             "howl", "chant", "call", "echo", "gift", "oath", "spark", "chain", "flame", "fire", "light",
             "forge", "steel", "iron", "gear", "spark", "weld", "core", "pulse", "torch"
         ],
+        comboWeight: 1 // 50/50 chance of fixed literal title or mixed construct
     },
     patterns: [
         // clipped, hammerlike patterns — lots of stops and hard vowels
@@ -194,7 +196,7 @@ export const SEA = {
             "shanty", "chant", "call", "prayer", "anchor", "helm", "chain", "oath", "mark", "bane", "crown", "born",
             "child", "soul", "bringer", "dreamer", "breaker", ""
         ],
-        comboWeight: 1 // 50/50 chance of fixed literal title or mixed construct
+        comboWeight: 0.5 // 50/50 chance of fixed literal title or mixed construct
     },
     patterns: [
         // more fluid, open phoneme shapes
