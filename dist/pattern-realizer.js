@@ -2,6 +2,30 @@ import { pick, cleanName, capitalize } from "./util.js";
 import { EARTH } from "./themes.data.js";
 import { withinBudget } from "./limits.js";
 import { insertVowelBreaks, withLinkingVowel } from "./vowels.js";
+export function choosePattern(pools, rnd, targetSyll) {
+    // estimate syllables of a pattern as number of 'V' plus 1 if it has S/E clusters
+    // then bias selection toward <= targetSyll
+    const pats = pools.patterns;
+    const scored = pats.map(p => {
+        const v = (p.match(/V/g) || []).length;
+        const bonus = /(S|E)/.test(p) ? 1 : 0;
+        const est = v + bonus;
+        const penalty = Math.max(0, est - targetSyll); // 0 if under/at target
+        // weight: higher if closer/under target
+        const weight = 1 / (1 + penalty);
+        return { p, weight };
+    });
+    // weighted pick
+    let acc = 0;
+    for (const s of scored)
+        acc += s.weight;
+    let r = rnd() * acc;
+    for (const s of scored) {
+        if ((r -= s.weight) <= 0)
+            return s.p;
+    }
+    return pick(pats, rnd);
+}
 export function realizePattern(pattern, pools, rnd, gender, firstLimits) {
     const { consonants: C, vowels: V, clustersStart: S, clustersEnd: E } = pools;
     const parts = [];

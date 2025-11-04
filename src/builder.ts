@@ -1,7 +1,7 @@
 import type { RNG } from "./rng.js";
 import { pick, type NonEmptyArray, capitalize } from "./util.js";
-import { EARTH, FORGE, SEA } from "./themes.data.js";
-import { realizePattern, } from "./pattern-realizer.js";
+import { getThemePool, EARTH } from "./themes.data.js";
+import { realizePattern, choosePattern } from "./pattern-realizer.js";
 
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
 import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
@@ -14,13 +14,6 @@ export type Format = "single" | "single+last" | "single+title" | "random";
 
 type Pools = typeof EARTH;
 
-function materialFor(theme: Theme): Pools {
-    switch (theme){
-        case "earth" : return EARTH;
-        case "sea" : return SEA;
-        case "forge" : return FORGE;
-    }
-}
 
 function makeLastName(pools: Pools, rnd: RNG): string {
     const L = pick(pools.lastNamePieces.left, rnd);
@@ -29,52 +22,16 @@ function makeLastName(pools: Pools, rnd: RNG): string {
     return insertVowelBreaks(joined, pools, rnd);
 }
 
+export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RNG ) : string {
 
-
-
-
-function choosePattern(pools: Pools, rnd: RNG, targetSyll: number): string {
-    // estimate syllables of a pattern as number of 'V' plus 1 if it has S/E clusters
-    // then bias selection toward <= targetSyll
-    const pats = pools.patterns as NonEmptyArray<string>;
-    const scored = pats.map(p => {
-      const v = (p.match(/V/g) || []).length;
-      const bonus = /(S|E)/.test(p) ? 1 : 0;
-      const est = v + bonus;
-      const penalty = Math.max(0, est - targetSyll); // 0 if under/at target
-      // weight: higher if closer/under target
-      const weight = 1 / (1 + penalty);
-      return { p, weight };
-    });
-  
-    // weighted pick
-    let acc = 0;
-    for (const s of scored) acc += s.weight;
-    let r = rnd() * acc;
-    for (const s of scored) {
-      if ((r -= s.weight) <= 0) return s.p;
-    }
-    return pick(pats, rnd);
-}
-
-
-
- 
-
-export function buildName(
-    theme: Theme,
-    gender: Gender,
-    format: Format,
-    rnd: RNG
-) : string {
-    const pools = materialFor(theme);
-    const lim = LIMITS_BY_FORMAT[format];
+    const pools = getThemePool(theme) as Pools;
+    const limits = LIMITS_BY_FORMAT[format];
   
     for (let tries = 0; tries < 16; tries++) 
     {
-        const pattern = choosePattern(pools, rnd, lim.maxSyllFirst);
-        const core = realizePattern(pattern, pools, rnd, gender, lim);
-        if (!isPronounceable(core) || !withinBudget(core, lim.maxCharsFirst, lim.maxSyllFirst)) 
+        const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
+        const core = realizePattern(pattern, pools, rnd, gender, limits);
+        if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) 
         {
             continue;
         }
@@ -111,7 +68,7 @@ export function buildName(
         const pronounceableOk = firstOk && lastOk;
     
         // Budget still applies to the whole thing (so titles can still be too long overall)
-        if (pronounceableOk && withinBudget(full, lim.maxCharsFull, lim.maxSyllFull)) {
+        if (pronounceableOk && withinBudget(full, limits.maxCharsFull, limits.maxSyllFull)) {
             return full;
         }
 

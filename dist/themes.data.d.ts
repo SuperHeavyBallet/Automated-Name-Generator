@@ -18,6 +18,7 @@ export type themePool = {
     };
     patterns: NonEmptyArray<string>;
 };
+export declare function getThemePool(theme: string): themePool | undefined;
 export declare const FORGE: themePool;
 export declare const SEA: themePool;
 export declare const EARTH: themePool;

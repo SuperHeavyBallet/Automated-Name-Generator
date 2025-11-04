@@ -13,7 +13,29 @@ export type Format = "single" | "single+last" | "single+title" | "random";
 
 type Pools = typeof EARTH;
 
+export function choosePattern(pools: Pools, rnd: RNG, targetSyll: number): string {
 
+    const patterns = pools.patterns as NonEmptyArray<string>;
+
+    const scored = patterns.map(p => {
+      const v = (p.match(/V/g) || []).length;
+      const bonus = /(S|E)/.test(p) ? 1 : 0;
+      const est = v + bonus;
+      const penalty = Math.max(0, est - targetSyll); // 0 if under/at target
+      // weight: higher if closer/under target
+      const weight = 1 / (1 + penalty);
+      return { p, weight };
+    });
+  
+    // weighted pick
+    let acc = 0;
+    for (const s of scored) acc += s.weight;
+    let r = rnd() * acc;
+    for (const s of scored) {
+      if ((r -= s.weight) <= 0) return s.p;
+    }
+    return pick(patterns, rnd);
+}
 
 export function realizePattern(
     pattern: string,

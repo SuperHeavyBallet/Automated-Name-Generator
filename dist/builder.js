@@ -1,54 +1,23 @@
 import { pick, capitalize } from "./util.js";
-import { EARTH, FORGE, SEA } from "./themes.data.js";
-import { realizePattern, } from "./pattern-realizer.js";
+import { getThemePool, EARTH } from "./themes.data.js";
+import { realizePattern, choosePattern } from "./pattern-realizer.js";
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
 import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
 import { isPronounceable } from "./pronunciation.js";
 import { makeTitle } from "./titles.js";
-function materialFor(theme) {
-    switch (theme) {
-        case "earth": return EARTH;
-        case "sea": return SEA;
-        case "forge": return FORGE;
-    }
-}
 function makeLastName(pools, rnd) {
     const L = pick(pools.lastNamePieces.left, rnd);
     const R = pick(pools.lastNamePieces.right, rnd);
     const joined = withLinkingVowel(L, R, pools, rnd);
     return insertVowelBreaks(joined, pools, rnd);
 }
-function choosePattern(pools, rnd, targetSyll) {
-    // estimate syllables of a pattern as number of 'V' plus 1 if it has S/E clusters
-    // then bias selection toward <= targetSyll
-    const pats = pools.patterns;
-    const scored = pats.map(p => {
-        const v = (p.match(/V/g) || []).length;
-        const bonus = /(S|E)/.test(p) ? 1 : 0;
-        const est = v + bonus;
-        const penalty = Math.max(0, est - targetSyll); // 0 if under/at target
-        // weight: higher if closer/under target
-        const weight = 1 / (1 + penalty);
-        return { p, weight };
-    });
-    // weighted pick
-    let acc = 0;
-    for (const s of scored)
-        acc += s.weight;
-    let r = rnd() * acc;
-    for (const s of scored) {
-        if ((r -= s.weight) <= 0)
-            return s.p;
-    }
-    return pick(pats, rnd);
-}
 export function buildName(theme, gender, format, rnd) {
-    const pools = materialFor(theme);
-    const lim = LIMITS_BY_FORMAT[format];
+    const pools = getThemePool(theme);
+    const limits = LIMITS_BY_FORMAT[format];
     for (let tries = 0; tries < 16; tries++) {
-        const pattern = choosePattern(pools, rnd, lim.maxSyllFirst);
-        const core = realizePattern(pattern, pools, rnd, gender, lim);
-        if (!isPronounceable(core) || !withinBudget(core, lim.maxCharsFirst, lim.maxSyllFirst)) {
+        const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
+        const core = realizePattern(pattern, pools, rnd, gender, limits);
+        if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) {
             continue;
         }
         let full = core;
@@ -80,7 +49,7 @@ export function buildName(theme, gender, format, rnd) {
         const lastOk = !usedLast || (parts[1] && isPronounceable(parts[1]));
         const pronounceableOk = firstOk && lastOk;
         // Budget still applies to the whole thing (so titles can still be too long overall)
-        if (pronounceableOk && withinBudget(full, lim.maxCharsFull, lim.maxSyllFull)) {
+        if (pronounceableOk && withinBudget(full, limits.maxCharsFull, limits.maxSyllFull)) {
             return full;
         }
     }

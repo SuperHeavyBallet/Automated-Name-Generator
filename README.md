@@ -1,0 +1,61 @@
+**_ROUGH_** Documentation - Name Builder App
+
+**The API**
+
+Currently the app is exposed via CLI and a browser based app. The user at the moment simply chooses:
+
+Name Theme (Earth, Sea, Forge) and Name Format (Single, Single + Last, Single + Title)
+
+And within that Matrix, on pressing ‘Generate Name’ or running the Program, a name is returned fitting those criteria.
+
+**The Process**
+
+Roughly speaking, the different Themes and Format all work through the same pathway, simply pulling at different parts of the pool for results.
+The process begins at the top level of ‘Web App’
+Web App calls the Dependency ‘name-builder’ as referenced in the package.json, supplying the appropriate Arguments (theme, gender, format).
+
+Within ‘name-builder’, in index.ts, the function generateName is found, accepting the arguments: theme, gender, format, using the const rnd (Random number) built from makeRNG dependency from rng.js (Simply a mulberry32 pseudo-random number generator or fallback Math.random). - Potentially reduce this to simply Math.random, not an entirely separate module, although Mulberry32 allows for consistent seeding
+
+Using buildName() from builder.js, generateName() then returns that string using the theme,gender,format and rnd as input arguments.
+
+**Builder.js**
+
+Builder.js is the first layer of name construction with a given set of parameters: theme, gender, format and rnd
+
+First, buildName creates the const pools, assigned the type of Pools
+
+Const Pools then uses the function materialFor to return one of the appropriate pools of name parts depending on the given argument string (“earth” : return EARTH etc) which are each imported from themes.data.js - maybe make a function within themes.data.js to handle this, clean up builder.ts
+
+Const pools uses getThemePool() , imported from themes.data.js, which is given the string theme to return the Pool name-parts for that theme (“earth” : return EARTH etc).
+
+This essentially returns the appropriate raw material to draw from in the process of building a new name. EARTH, SEA, FORGE (and others) each have specific word styles, contents etc. Altering the JSON-Esque content of these will impact the output, but not the process.
+
+Next, const limits is declared, using the LIMITS_BY_FORMAT (import from limits.ts) const to get the character/syllable Limits of the given format (Single, Single + Last, Single + Title)
+
+Const LIMITS_BY_FORMAT uses the Record type to build a set of key:value pairs, each key returning the character limits for that format.
+
+Now, with the source Pool and character Limits defined, we can begin to build the name.
+
+Using a for loop, we make 16 tries at generating a valid name. This is to try and shotgun until we get a valid result, to offset the chances of an invalid one. - Quite brute force, maybe refine
+
+Within each try, we first create the const pattern, using choosePattern (imported from pattern-realizer.js) with the arguments pools (the set of name-parts for this theme), rnd (a random number supplied at buildName argument) and the maxSyllFirst value within limits to generate the pattern for the first name.
+
+choosePattern(pools, rnd. targetSyll) : string
+
+First, the const patterns is declared as the type: NonEmptyArray<string> (which is simply An array that cannot be empty, mostly to save checking if Array.Length > 0)
+
+# NonEmptyArray<t>
+
+A **TypeScript utility type** representing an array that is guaranteed to contain at least one element.
+
+```ts
+export type NonEmptyArray<T> = readonly [T, ...T[]];
+```
+
+The value of patterns is assigned as pools.patterns, which takes the patterns value of the supplied pool (theme based word-parts). A pool.patterns value looks like:
+
+```ts
+patterns: [
+"CVC","CVCC","SCVC","CVCV","SVC","CVVC","SCVCV","CVCEC","CVCCV","SVCC"
+] as const,
+```

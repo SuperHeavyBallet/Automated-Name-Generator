@@ -1,3 +1,10 @@
+export function getThemePool(theme) {
+    switch (theme) {
+        case "earth": return EARTH;
+        case "sea": return SEA;
+        case "forge": return FORGE;
+    }
+}
 export const FORGE = {
     consonants: [
         "b", "c", "d", "f", "g", "h", "k", "l", "m", "n", "p", "r", "s", "t", "v", "x", "z",
@@ -14,7 +21,7 @@ export const FORGE = {
         "ar", "orn", "an", "rak", "gar", "grim", "gath", "dur", "thor", "vald", "rek", "gan", "zor"
     ],
     femaleEndings: [
-        "a", "ia", "ara", "ira", "ona", "yna", "ora", "eth", "ryn", "is", "yne", "ara"
+        "a", "ia", "ara", "ira", "ona", "yna", "ora", "eth", "ryn", "is", "yne", "ara", "ika", 'akath', "ara", "mett", 'sona'
     ],
     lastNamePieces: {
         left: [

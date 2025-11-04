@@ -5,6 +5,7 @@ export type Theme = "earthy" | "sea" | "forge";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 type Pools = typeof EARTH;
+export declare function choosePattern(pools: Pools, rnd: RNG, targetSyll: number): string;
 export declare function realizePattern(pattern: string, pools: Pools, rnd: RNG, gender: Gender, firstLimits: Limits): string;
 export {};
 //# sourceMappingURL=pattern-realizer.d.ts.map

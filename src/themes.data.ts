@@ -20,6 +20,16 @@ export type themePool = {
     patterns: NonEmptyArray<string>; // e.g. "CVC", "CVCCV", "SCV", etc.
 }
 
+export function getThemePool(theme: string)
+{
+  switch(theme){
+    case "earth" : return EARTH;
+    case "sea" : return SEA;
+    case "forge" : return FORGE;
+  }
+
+}
+
 export const FORGE: themePool = {
   consonants: [
     "b","c","d","f","g","h","k","l","m","n","p","r","s","t","v","x","z",
@@ -38,7 +48,7 @@ export const FORGE: themePool = {
   ] as const,
 
   femaleEndings: [
-    "a","ia","ara","ira","ona","yna","ora","eth","ryn","is","yne","ara"
+    "a","ia","ara","ira","ona","yna","ora","eth","ryn","is","yne","ara", "ika", 'akath', "ara", "mett", 'sona'
   ] as const,
 
   lastNamePieces: {
