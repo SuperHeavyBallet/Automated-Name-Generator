@@ -13,7 +13,7 @@ export type Format = "single" | "single+last" | "single+title" | "random";
 
 type Pools = typeof EARTH;
 
-export function choosePattern(pools: Pools, rnd: RNG, targetSyll: number): string {
+export function choosePattern(pools: Pools, rnd: RNG, targetSyllable: number): string {
 
     const patterns = pools.patterns as NonEmptyArray<string>;
 
@@ -21,7 +21,7 @@ export function choosePattern(pools: Pools, rnd: RNG, targetSyll: number): strin
       const v = (p.match(/V/g) || []).length;
       const bonus = /(S|E)/.test(p) ? 1 : 0;
       const est = v + bonus;
-      const penalty = Math.max(0, est - targetSyll); // 0 if under/at target
+      const penalty = Math.max(0, est - targetSyllable); // 0 if under/at target
       // weight: higher if closer/under target
       const weight = 1 / (1 + penalty);
       return { p, weight };

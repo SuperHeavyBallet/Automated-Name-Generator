@@ -31,6 +31,7 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
     {
         const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
         const core = realizePattern(pattern, pools, rnd, gender, limits);
+        
         if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) 
         {
             continue;

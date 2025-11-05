@@ -10,10 +10,10 @@ export type Limits = {
 };
 
 export const LIMITS_BY_FORMAT: Record<Format, Limits> = {
-    "single":       { maxCharsFirst: 6, maxSyllFirst: 2, maxCharsFull: 6,  maxSyllFull: 2, endingChance: 0.35 },
-    "single+last":  { maxCharsFirst: 6, maxSyllFirst: 2, maxCharsFull: 18, maxSyllFull: 5, endingChance: 0.35 },
-    "single+title": { maxCharsFirst: 6, maxSyllFirst: 2, maxCharsFull: 16, maxSyllFull: 5, endingChance: 0.35 },
-    "random":       { maxCharsFirst: 6, maxSyllFirst: 2, maxCharsFull: 18, maxSyllFull: 5, endingChance: 0.30 },
+    "single":       { maxCharsFirst: 6, maxSyllFirst: 3, maxCharsFull: 6,  maxSyllFull: 2, endingChance: 0.35 },
+    "single+last":  { maxCharsFirst: 6, maxSyllFirst: 3, maxCharsFull: 18, maxSyllFull: 5, endingChance: 0.35 },
+    "single+title": { maxCharsFirst: 6, maxSyllFirst: 3, maxCharsFull: 16, maxSyllFull: 5, endingChance: 0.35 },
+    "random":       { maxCharsFirst: 6, maxSyllFirst: 3, maxCharsFull: 18, maxSyllFull: 5, endingChance: 0.30 },
 };
 
 export function countSyllables(s: string): number {
