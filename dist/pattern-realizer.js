@@ -2,18 +2,7 @@ import { pick, cleanName, capitalize } from "./util.js";
 import { withinBudget } from "./limits.js";
 import { insertVowelBreaks, withLinkingVowel } from "./vowels.js";
 export function realizePattern(pattern, pools, rnd, gender, firstLimits) {
-    const { consonants: C, vowels: V, clustersStart: S, clustersEnd: E } = pools;
-    const parts = [];
-    for (const ch of pattern) {
-        if (ch === "C")
-            parts.push(pick(C, rnd));
-        else if (ch === "V")
-            parts.push(pick(V, rnd));
-        else if (ch === "S")
-            parts.push(pick(S, rnd));
-        else if (ch === "E")
-            parts.push(pick(E, rnd));
-    }
+    const parts = buildParts(pattern, rnd, pools);
     let base = parts.join("");
     base = insertVowelBreaks(base, pools, rnd);
     base = cleanName(capitalize(base));
@@ -31,5 +20,24 @@ export function realizePattern(pattern, pools, rnd, gender, firstLimits) {
         }
     }
     return base;
+}
+function buildParts(pattern, rnd, pools) {
+    const { consonants: C, vowels: V, clustersStart: S, clustersEnd: E } = pools;
+    const map = { C: C, V: V, S: S, E: E };
+    const parts = [];
+    for (const ch of pattern) {
+        const pool = map[ch];
+        if (!pool) {
+            // choose ONE of these behaviors:
+            // 1) Keep literal characters:
+            // parts.push(ch);
+            // 2) Or be strict:
+            throw new Error(`Unknown pattern symbol: ${ch}`);
+        }
+        else {
+            parts.push(pick(pool, rnd));
+        }
+    }
+    return parts;
 }
 //# sourceMappingURL=pattern-realizer.js.map

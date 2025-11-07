@@ -48,7 +48,8 @@ export const FORGE = {
         "the Brass Saint", "the Steel Prophet", "the Furnace-Mind", "the Powderhand", "the Gunfather",
         "the Rivetqueen", "the Sparkbringer", "the Warwright", "the Kilnborne", "the Flame-Eater",
         "the Mechanist", "the Firevein", "the Char-Eyed", "the Red Warden", "the Heatkeeper",
-        "the Foundry Ghost", "the Slagforged", "the Machinebound", "the Cinderwalker", "the Last Spark"
+        "the Foundry Ghost", "the Slagforged", "the Machinebound", "the Cinderwalker", "the Last Spark",
+        "the Brazen", "the Blasted", "The Smoten", "The Barrage"
     ],
     titlePieces: {
         left: [

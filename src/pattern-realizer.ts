@@ -19,16 +19,9 @@ export function realizePattern(
     firstLimits: Limits
 ) : string {
 
-    const { consonants: C, vowels: V, clustersStart: S, clustersEnd: E } = pools;
+ 
+    const parts: string[] = buildParts(pattern, rnd, pools);
 
-    const parts: string[] = [];
-
-    for (const ch of pattern) {
-        if (ch === "C") parts.push(pick(C as NonEmptyArray<string>, rnd));
-        else if (ch === "V") parts.push(pick(V as NonEmptyArray<string>, rnd));
-        else if (ch === "S") parts.push(pick(S as NonEmptyArray<string>, rnd));
-        else if (ch === "E") parts.push(pick(E as NonEmptyArray<string>, rnd));
-    }
 
     let base = parts.join("");
     base = insertVowelBreaks(base, pools, rnd);
@@ -52,6 +45,29 @@ export function realizePattern(
     }
 
   return base;
+}
+
+function buildParts(pattern: string, rnd : RNG, pools: Pools): string[]{
+
+    const { consonants: C, vowels: V, clustersStart: S, clustersEnd: E } = pools;
+    const map: Record<string, NonEmptyArray<string>> = { C: C as NonEmptyArray<string>, V: V as NonEmptyArray<string>, S: S as NonEmptyArray<string>, E: E as NonEmptyArray<string> };
+
+    const parts: string[] = [];
+
+    for (const ch of pattern) {
+      const pool = map[ch];
+      if (!pool) {
+        // choose ONE of these behaviors:
+        // 1) Keep literal characters:
+        // parts.push(ch);
+        // 2) Or be strict:
+        throw new Error(`Unknown pattern symbol: ${ch}`);
+      } else {
+        parts.push(pick(pool, rnd));
+      }
+    }
+    
+    return parts;
 }
 
 
