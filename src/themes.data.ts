@@ -1,5 +1,7 @@
 import type { NonEmptyArray } from "./util.js";
 
+
+
 export type themePool = {
     consonants: NonEmptyArray<string>;
     vowels: NonEmptyArray<string>;
@@ -29,6 +31,8 @@ export function getThemePool(theme: string)
   }
 
 }
+
+
 
 export const FORGE: themePool = {
   consonants: [
@@ -78,7 +82,8 @@ export const FORGE: themePool = {
     "the Brass Saint","the Steel Prophet","the Furnace-Mind","the Powderhand","the Gunfather",
     "the Rivetqueen","the Sparkbringer","the Warwright","the Kilnborne","the Flame-Eater",
     "the Mechanist","the Firevein","the Char-Eyed","the Red Warden","the Heatkeeper",
-    "the Foundry Ghost","the Slagforged","the Machinebound","the Cinderwalker","the Last Spark"
+    "the Foundry Ghost","the Slagforged","the Machinebound","the Cinderwalker","the Last Spark",
+    "the Brazen", "the Blasted", "The Smoten", "The Barrage"
   ] as const,
 
   titlePieces: {
@@ -186,6 +191,7 @@ export const FORGE: themePool = {
   
   patterns: [
     // clipped, hammerlike patterns — lots of stops and hard vowels
+    // C: Consonent, V: Vowel, S: Special, E: Extra
     "CVC","CVCC","SCVC","CVCV","SVC","CVVC","SCVCV","CVCEC","CVCCV","SVCC"
   ] as const,
 }

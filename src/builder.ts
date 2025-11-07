@@ -1,7 +1,9 @@
 import type { RNG } from "./rng.js";
-import { pick, type NonEmptyArray, capitalize } from "./util.js";
-import { getThemePool, EARTH } from "./themes.data.js";
-import { realizePattern, choosePattern } from "./pattern-realizer.js";
+import type { themePool } from "./themes.data.js";
+import { pick, capitalize } from "./util.js";
+import { getThemePool} from "./themes.data.js";
+import { realizePattern } from "./pattern-realizer.js";
+import { choosePattern } from "./pattern-chooser.js";
 
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
 import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
@@ -12,15 +14,19 @@ export type Theme = "earth" | "sea" | "forge";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
-type Pools = typeof EARTH;
+type Pools = themePool;
 
 
 function makeLastName(pools: Pools, rnd: RNG): string {
     const L = pick(pools.lastNamePieces.left, rnd);
     const R = pick(pools.lastNamePieces.right, rnd);
-    const joined = withLinkingVowel(L, R, pools, rnd);
-    return insertVowelBreaks(joined, pools, rnd);
+    const joined = L + R;
+    return joined;
 }
+
+
+
+
 
 export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RNG ) : string {
 
@@ -31,14 +37,13 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
     {
         const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
         const core = realizePattern(pattern, pools, rnd, gender, limits);
-        
+
         if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) 
         {
             continue;
         }
   
         let full = core;
-
         let usedLast = false;
         let usedTitle = false;
     
@@ -59,8 +64,6 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
             full = `${core} ${makeTitle(pools, rnd)}`; // literal title; no smoothing later
             usedTitle = true;
         }
-    
-        //full = insertVowelBreaks(full, pools, rnd);
 
         // Pronounceability: check only generated parts (first + last), never the title.
         const parts = full.split(" ");

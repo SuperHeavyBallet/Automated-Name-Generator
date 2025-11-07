@@ -19,6 +19,8 @@ export function withLinkingVowel(left: string, right: string, pools: Pools, rnd:
     return left + right;
 }
 
+
+
 export function insertVowelBreaks(s: string, pools: Pools, rnd: RNG): string {
     const NEEDS_FOLLOW_VOWEL = /(str|thr|shr|spl|spr|scr|skl|skw|ch|sh|th)(?=[bcdfghjklmnpqrstvwxyz])/gi;
     s = s.replace(NEEDS_FOLLOW_VOWEL, (m) => m + pickMicroVowel(rnd));

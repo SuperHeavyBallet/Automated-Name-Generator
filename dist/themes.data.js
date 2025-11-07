@@ -138,6 +138,7 @@ export const FORGE = {
     },
     patterns: [
         // clipped, hammerlike patterns — lots of stops and hard vowels
+        // C: Consonent, V: Vowel, S: Special, E: Extra
         "CVC", "CVCC", "SCVC", "CVCV", "SVC", "CVVC", "SCVCV", "CVCEC", "CVCCV", "SVCC"
     ],
 };

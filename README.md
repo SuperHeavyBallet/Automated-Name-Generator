@@ -1,5 +1,21 @@
 # **_ROUGH_** Documentation - Name Builder App
 
+# Current Known Errors
+
+## ! FIXED - remove Linking Vowels from Last Name Builder (builder.ts > makeLastName())
+
+In Last name, ending the first half with a consonant sometimes/often results in an extra vowel being added, ending in a vowel does not
+
+Example:
+
+Sea, Single+Last: Daen Saltakin -> Should ideally be Daen Saltkin
+
+Forge, Single+Last: Vaid Bronzebearer -> Is Ideal
+
+Forge, Single+Last: Stiaus Ironengine -> Is Ideal (But first half, 'iron' ends with consonent???)
+
+The issue may lie somewhere between 'first half ends with consonent > Add Vowel' and 'second half starts with vowel, remove or do not add vowel'?
+
 ## **The API**
 
 Currently the app is exposed via CLI and a browser based app. The user at the moment simply chooses:

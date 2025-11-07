@@ -1,6 +1,7 @@
 import { pick, capitalize } from "./util.js";
-import { getThemePool, EARTH } from "./themes.data.js";
-import { realizePattern, choosePattern } from "./pattern-realizer.js";
+import { getThemePool } from "./themes.data.js";
+import { realizePattern } from "./pattern-realizer.js";
+import { choosePattern } from "./pattern-chooser.js";
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
 import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
 import { isPronounceable } from "./pronunciation.js";
@@ -8,8 +9,8 @@ import { makeTitle } from "./titles.js";
 function makeLastName(pools, rnd) {
     const L = pick(pools.lastNamePieces.left, rnd);
     const R = pick(pools.lastNamePieces.right, rnd);
-    const joined = withLinkingVowel(L, R, pools, rnd);
-    return insertVowelBreaks(joined, pools, rnd);
+    const joined = L + R;
+    return joined;
 }
 export function buildName(theme, gender, format, rnd) {
     const pools = getThemePool(theme);
@@ -42,7 +43,6 @@ export function buildName(theme, gender, format, rnd) {
             full = `${core} ${makeTitle(pools, rnd)}`; // literal title; no smoothing later
             usedTitle = true;
         }
-        //full = insertVowelBreaks(full, pools, rnd);
         // Pronounceability: check only generated parts (first + last), never the title.
         const parts = full.split(" ");
         const firstOk = isPronounceable(parts[0]);
