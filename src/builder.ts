@@ -38,6 +38,7 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
         const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
         const core = realizePattern(pattern, pools, rnd, gender, limits);
 
+        // Check first if the result exceeds acceptable limits, if so, abort and retry
         if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) 
         {
             continue;
@@ -46,23 +47,14 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
         let full = core;
         let usedLast = false;
         let usedTitle = false;
-    
-        if (format === "random")
-        {
-            const randomInt = Math.floor(rnd() * 3);
-            if (randomInt === 1) { full = `${core} ${makeLastName(pools, rnd)}`; usedLast = true; }
-            else if (randomInt === 2) { full = `${core} ${makeTitle(pools, rnd)}`; usedTitle = true; }
 
-        }
-        else if (format === "single+last") 
+        if (format !== "single")
         {
-            full = `${core} ${makeLastName(pools, rnd)}`;
-            usedLast = true;
-        }
-        else if (format === "single+title") 
-        {
-            full = `${core} ${makeTitle(pools, rnd)}`; // literal title; no smoothing later
-            usedTitle = true;
+           const { builtFull, builtUsedLast, builtUsedTitle } = buildNameInFormat(format, rnd, core, pools);
+
+           full = builtFull;
+           usedLast = builtUsedLast;
+           usedTitle = builtUsedTitle;
         }
 
         // Pronounceability: check only generated parts (first + last), never the title.
@@ -95,3 +87,49 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
     if (format === "single+last") return `${simple} ${makeLastName(pools, rnd)}`;
     return `${simple} ${makeTitle(pools, rnd)}`;
 }
+
+function buildNameInFormat(
+    format: Format,
+    rnd: RNG,
+    core: string,
+    pools: Pools
+  ): {
+    builtFull: string;
+    builtUsedLast: boolean;
+    builtUsedTitle: boolean;
+  } {
+    let builtFull = core;
+    let builtUsedLast = false;
+    let builtUsedTitle = false;
+  
+    switch (format) {
+      case "single+last":
+        builtFull = `${core} ${makeLastName(pools, rnd)}`;
+        builtUsedLast = true;
+        break;
+  
+      case "single+title":
+        builtFull = `${core} ${makeTitle(pools, rnd)}`;
+        builtUsedLast = true;
+        builtUsedTitle = true;
+        break;
+  
+      case "random":
+      default:
+        const randomInt = Math.floor(rnd() * 3);
+        if (randomInt === 1) {
+            builtFull = `${core} ${makeLastName(pools, rnd)}`;
+            builtUsedLast = true;
+        } else if (randomInt === 2) {
+            builtFull = `${core} ${makeTitle(pools, rnd)}`;
+            builtUsedLast = true;
+        }
+        break;
+    }
+  
+    return {
+      builtFull,
+      builtUsedLast,
+      builtUsedTitle
+    };
+  }

@@ -12,36 +12,57 @@ function makeLastName(pools, rnd) {
     const joined = L + R;
     return joined;
 }
+function buildNameInFormat(format, rnd, core, pools) {
+    let builtFull = core;
+    let builtUsedLast = false;
+    let builtUsedTitle = false;
+    switch (format) {
+        case "single+last":
+            builtFull = `${core} ${makeLastName(pools, rnd)}`;
+            builtUsedLast = true;
+            break;
+        case "single+title":
+            builtFull = `${core} ${makeTitle(pools, rnd)}`;
+            builtUsedLast = true;
+            builtUsedTitle = true;
+            break;
+        case "random":
+        default:
+            const randomInt = Math.floor(rnd() * 3);
+            if (randomInt === 1) {
+                builtFull = `${core} ${makeLastName(pools, rnd)}`;
+                builtUsedLast = true;
+            }
+            else if (randomInt === 2) {
+                builtFull = `${core} ${makeTitle(pools, rnd)}`;
+                builtUsedLast = true;
+            }
+            break;
+    }
+    return {
+        builtFull,
+        builtUsedLast,
+        builtUsedTitle
+    };
+}
 export function buildName(theme, gender, format, rnd) {
     const pools = getThemePool(theme);
     const limits = LIMITS_BY_FORMAT[format];
     for (let tries = 0; tries < 16; tries++) {
         const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
         const core = realizePattern(pattern, pools, rnd, gender, limits);
+        // Check first if the result exceeds acceptable limits, if so, abort and retry
         if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) {
             continue;
         }
         let full = core;
         let usedLast = false;
         let usedTitle = false;
-        if (format === "random") {
-            const randomInt = Math.floor(rnd() * 3);
-            if (randomInt === 1) {
-                full = `${core} ${makeLastName(pools, rnd)}`;
-                usedLast = true;
-            }
-            else if (randomInt === 2) {
-                full = `${core} ${makeTitle(pools, rnd)}`;
-                usedTitle = true;
-            }
-        }
-        else if (format === "single+last") {
-            full = `${core} ${makeLastName(pools, rnd)}`;
-            usedLast = true;
-        }
-        else if (format === "single+title") {
-            full = `${core} ${makeTitle(pools, rnd)}`; // literal title; no smoothing later
-            usedTitle = true;
+        if (format !== "single") {
+            const { builtFull, builtUsedLast, builtUsedTitle } = buildNameInFormat(format, rnd, core, pools);
+            full = builtFull;
+            usedLast = builtUsedLast;
+            usedTitle = builtUsedTitle;
         }
         // Pronounceability: check only generated parts (first + last), never the title.
         const parts = full.split(" ");
