@@ -12,10 +12,59 @@ function makeLastName(pools, rnd) {
     const joined = L + R;
     return joined;
 }
+/*
+export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RNG ) : string {
+
+    const pools = getThemePool(theme) as Pools;
+    const limits = LIMITS_BY_FORMAT[format];
+  
+    for (let tries = 0; tries < 16; tries++)
+    {
+        const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
+        const core = realizePattern(pattern, pools, rnd, gender, limits);
+
+        // Check first if the result exceeds acceptable limits, if so, abort and retry
+        if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) continue;
+  
+        let full = core, usedLast = false, usedTitle = false;
+
+        if (format !== "single")
+        {
+           const { builtFull, builtUsedLast, builtUsedTitle } = buildNameInFormat(format, rnd, core, pools);
+           full = builtFull;
+           usedLast = builtUsedLast;
+           usedTitle = builtUsedTitle;
+        }
+        
+        const { checkFirstOk, checkLastOk } = checkIsPronounceable(full, usedLast);
+        const pronounceableOk = checkFirstOk && checkLastOk;
+    
+        // Budget still applies to the whole thing (so titles can still be too long overall)
+        if (pronounceableOk && withinBudget(full, limits.maxCharsFull, limits.maxSyllFull)) return full;
+    }
+  
+    // Fallback that respects format (short bias)
+    const simple = capitalize(
+      pick(pools.vowels, rnd) + pick(pools.consonants, rnd) + pick(pools.vowels, rnd)
+    );
+  
+    if (format === "random") {
+      const r = Math.floor(rnd() * 3);
+      return r === 0
+        ? simple
+        : r === 1
+        ? `${simple} ${makeLastName(pools, rnd)}`
+        : `${simple} ${makeTitle(pools, rnd)}`;
+    }
+    if (format === "single") return simple;
+    if (format === "single+last") return `${simple} ${makeLastName(pools, rnd)}`;
+    return `${simple} ${makeTitle(pools, rnd)}`;
+}
+*/
 function tryBuildNameOnce(gender, format, rnd, pools, limits) {
     const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
     const core = realizePattern(pattern, pools, rnd, gender, limits);
-    if (!isPronounceable(core) || withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) {
+    if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) {
         return null;
     }
     let full = core, usedLast = false, usedTitle = false;
@@ -68,7 +117,6 @@ function buildNameInFormat(format, rnd, core, pools) {
             break;
         case "single+title":
             builtFull = `${core} ${makeTitle(pools, rnd)}`;
-            builtUsedLast = true;
             builtUsedTitle = true;
             break;
         case "random":
@@ -80,7 +128,7 @@ function buildNameInFormat(format, rnd, core, pools) {
             }
             else if (randomInt === 2) {
                 builtFull = `${core} ${makeTitle(pools, rnd)}`;
-                builtUsedLast = true;
+                builtUsedTitle = true;
             }
             break;
     }
