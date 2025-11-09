@@ -22,7 +22,6 @@ export function realizePattern(
  
     const parts: string[] = buildParts(pattern, rnd, pools);
 
-
     let base = parts.join("");
     base = insertVowelBreaks(base, pools, rnd);
     base = cleanName(capitalize(base));
@@ -31,6 +30,7 @@ export function realizePattern(
     if (rnd() < firstLimits.endingChance) 
     {
         const endPool = gender === "male" ? pools.maleEndings : pools.femaleEndings;
+        
         // Prefer short endings first (<=2–3 chars)
         const shortEnds = endPool.filter(e => e.length <= 3);
         const pickEnd = (shortEnds.length ? shortEnds : endPool) as NonEmptyArray<string>;
@@ -57,16 +57,12 @@ function buildParts(pattern: string, rnd : RNG, pools: Pools): string[]{
     for (const ch of pattern) {
       const pool = map[ch];
       if (!pool) {
-        // choose ONE of these behaviors:
-        // 1) Keep literal characters:
-        // parts.push(ch);
-        // 2) Or be strict:
         throw new Error(`Unknown pattern symbol: ${ch}`);
       } else {
         parts.push(pick(pool, rnd));
       }
     }
-    
+
     return parts;
 }
 

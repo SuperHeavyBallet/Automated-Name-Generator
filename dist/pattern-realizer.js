@@ -28,10 +28,6 @@ function buildParts(pattern, rnd, pools) {
     for (const ch of pattern) {
         const pool = map[ch];
         if (!pool) {
-            // choose ONE of these behaviors:
-            // 1) Keep literal characters:
-            // parts.push(ch);
-            // 2) Or be strict:
             throw new Error(`Unknown pattern symbol: ${ch}`);
         }
         else {

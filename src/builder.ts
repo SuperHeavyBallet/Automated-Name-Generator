@@ -5,7 +5,7 @@ import { getThemePool} from "./themes.data.js";
 import { realizePattern } from "./pattern-realizer.js";
 import { choosePattern } from "./pattern-chooser.js";
 
-import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
+import { withinBudget, LIMITS_BY_FORMAT, type Limits } from "./limits.js";
 import { withLinkingVowel, insertVowelBreaks } from "./vowels.js";
 import { isPronounceable } from "./pronunciation.js";
 import { makeTitle } from "./titles.js";
@@ -25,7 +25,38 @@ function makeLastName(pools: Pools, rnd: RNG): string {
 }
 
 
+function tryBuildNameOnce(gender: Gender, format: Format, rnd: RNG,  pools: Pools, limits : Limits) : string | null
+{
+    const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
+    const core = realizePattern(pattern, pools, rnd, gender, limits);
 
+    if(!isPronounceable(core) || withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) 
+    {
+        return null;
+    }
+
+    let full = core, usedLast = false, usedTitle = false;
+
+    if (format !== "single")
+        {
+           const { builtFull, builtUsedLast, builtUsedTitle } = buildNameInFormat(format, rnd, core, pools);
+           full = builtFull;
+           usedLast = builtUsedLast;
+           usedTitle = builtUsedTitle;
+        }
+        
+        const { checkFirstOk, checkLastOk } = checkIsPronounceable(full, usedLast);
+        const pronounceableOk = checkFirstOk && checkLastOk;
+    
+        // Budget still applies to the whole thing (so titles can still be too long overall)
+        if (pronounceableOk && withinBudget(full, limits.maxCharsFull, limits.maxSyllFull)) 
+        {
+            return full;
+        }
+
+        return null;
+
+}
 
 
 export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RNG ) : string {
@@ -35,39 +66,8 @@ export function buildName( theme: Theme, gender: Gender, format: Format, rnd: RN
   
     for (let tries = 0; tries < 16; tries++) 
     {
-        const pattern = choosePattern(pools, rnd, limits.maxSyllFirst);
-        const core = realizePattern(pattern, pools, rnd, gender, limits);
-
-        // Check first if the result exceeds acceptable limits, if so, abort and retry
-        if (!isPronounceable(core) || !withinBudget(core, limits.maxCharsFirst, limits.maxSyllFirst)) 
-        {
-            continue;
-        }
-  
-        let full = core;
-        let usedLast = false;
-        let usedTitle = false;
-
-        if (format !== "single")
-        {
-           const { builtFull, builtUsedLast, builtUsedTitle } = buildNameInFormat(format, rnd, core, pools);
-
-           full = builtFull;
-           usedLast = builtUsedLast;
-           usedTitle = builtUsedTitle;
-        }
-
-        // Pronounceability: check only generated parts (first + last), never the title.
-        const parts = full.split(" ");
-        const firstOk = isPronounceable(parts[0] as string);
-        const lastOk  = !usedLast || (parts[1] && isPronounceable(parts[1]));
-        const pronounceableOk = firstOk && lastOk;
-    
-        // Budget still applies to the whole thing (so titles can still be too long overall)
-        if (pronounceableOk && withinBudget(full, limits.maxCharsFull, limits.maxSyllFull)) {
-            return full;
-        }
-
+        const maybe = tryBuildNameOnce(gender, format, rnd, pools, limits);
+        if(maybe) return maybe;
     }
   
     // Fallback that respects format (short bias)
@@ -132,4 +132,16 @@ function buildNameInFormat(
       builtUsedLast,
       builtUsedTitle
     };
-  }
+}
+
+  function checkIsPronounceable(full : string, usedLast : boolean) : { checkFirstOk : boolean, checkLastOk : boolean }
+{
+    let checkFirstOk = false;
+    let checkLastOk = false;
+
+    const parts = full.split(" ");
+    checkFirstOk = (isPronounceable(parts[0] as string)) as boolean;
+    checkLastOk  = !usedLast  || (parts[1] && isPronounceable(parts[1])) as boolean;
+    
+    return { checkFirstOk, checkLastOk };
+}
