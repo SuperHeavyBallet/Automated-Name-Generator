@@ -6,6 +6,7 @@ export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
 export type NameOptions = {
+    race? : string,
     theme?: Theme; //default: "earthy"
     gender?: Gender //default: "male"
     format?: Format //default: "single"
@@ -14,6 +15,7 @@ export type NameOptions = {
 
 export function generateName(opts: NameOptions = {}): string {
     const {
+        race = "Dwarf",
         theme = "earth",
         gender = "male",
         format = "single",
@@ -21,7 +23,7 @@ export function generateName(opts: NameOptions = {}): string {
     } = opts;
 
     const rnd = makeRNG(seed);
-    return buildName(theme,gender,format,rnd);
+    return buildName(race, theme,gender,format,rnd);
 }
 
 export default generateName;

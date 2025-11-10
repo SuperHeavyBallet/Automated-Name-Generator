@@ -2,6 +2,7 @@ export type Theme = "earth" | "sea" | "forge";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 export type NameOptions = {
+    race?: string;
     theme?: Theme;
     gender?: Gender;
     format?: Format;
