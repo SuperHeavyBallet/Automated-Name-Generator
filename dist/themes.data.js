@@ -1,4 +1,5 @@
-export function getThemePool(theme) {
+export function getThemePool(theme, race) {
+    console.log(`The Chosen Race is: ${race}`);
     switch (theme) {
         case "earth": return EARTH;
         case "sea": return SEA;

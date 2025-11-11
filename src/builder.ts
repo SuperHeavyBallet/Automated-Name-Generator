@@ -15,13 +15,10 @@ export type Format = "single" | "single+last" | "single+title" | "random";
 type Pools = themePool;
 
 
-export function buildName( races: string, theme: Theme, gender: Gender, format: Format, rnd: RNG ) : string {
+export function buildName( race: string, theme: Theme, gender: Gender, format: Format, rnd: RNG ) : string {
 
- 
 
-    console.log(races);
-
-    const pools = getThemePool(theme) as Pools;
+    const pools = getThemePool(theme, race) as Pools;
     const limits = LIMITS_BY_FORMAT[format];
   
     // Try to get a good name within 16 attempts

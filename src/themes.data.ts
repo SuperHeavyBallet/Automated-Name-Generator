@@ -2,6 +2,7 @@ import type { NonEmptyArray } from "./util.js";
 
 
 
+
 export type themePool = {
     consonants: NonEmptyArray<string>;
     vowels: NonEmptyArray<string>;
@@ -22,8 +23,10 @@ export type themePool = {
     patterns: NonEmptyArray<string>; // e.g. "CVC", "CVCCV", "SCV", etc.
 }
 
-export function getThemePool(theme: string)
+export function getThemePool(theme: string, race : string)
 {
+  console.log(`The Chosen Race is: ${race}`);
+
   switch(theme){
     case "earth" : return EARTH;
     case "sea" : return SEA;

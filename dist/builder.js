@@ -5,9 +5,8 @@ import { choosePattern } from "./pattern-chooser.js";
 import { withinBudget, LIMITS_BY_FORMAT } from "./limits.js";
 import { isPronounceable } from "./pronunciation.js";
 import { makeTitle } from "./titles.js";
-export function buildName(races, theme, gender, format, rnd) {
-    console.log(races);
-    const pools = getThemePool(theme);
+export function buildName(race, theme, gender, format, rnd) {
+    const pools = getThemePool(theme, race);
     const limits = LIMITS_BY_FORMAT[format];
     // Try to get a good name within 16 attempts
     for (let tries = 0; tries < 16; tries++) {
