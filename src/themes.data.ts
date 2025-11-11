@@ -27,15 +27,211 @@ export function getThemePool(theme: string, race : string)
 {
   console.log(`The Chosen Race is: ${race}`);
 
-  switch(theme){
-    case "earth" : return EARTH;
-    case "sea" : return SEA;
-    case "forge" : return FORGE;
+  if(race === "Dwarf")
+  {
+    switch(theme){
+      case "earth" : return EARTH_DWARF;
+      case "sea" : return SEA;
+      case "forge" : return FORGE;
+    }
   }
+  else if(race === "Hero")
+  {
+    return HERO;
+
+  }
+  else{
+    return WIZARD;
+  }
+
+  
 
 }
 
+export const WIZARD: themePool = {
+  consonants: [
+    "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+    "th","sh","ph","ch","qu","zh","vr","vl","zr","gr","gl","cl","cr","dr","pr","tr","sk","sl","sm","sn","sp","st","str","spr","scr","shr","thr","chr","phr"
+  ] as const,
 
+  vowels: [
+    "a","e","i","o","u",
+    "ae","ea","ia","io","oi","ou","ui","ei","au","oa","ue","eau","oo"
+  ] as const,
+
+  clustersStart: [
+    "th","sh","ph","ch","qu",
+    "vr","vl","zr","gr","gl","cl","cr","dr","pr","tr",
+    "sk","sl","sm","sn","sp","st","str","spr","scr","shr","thr","chr","phr"
+  ] as const,
+
+  clustersEnd: [
+    "th","sh","ch","ph",
+    "rk","rn","rd","rt","rm","rl",
+    "nd","nt","ng","ns","nz",
+    "ld","lt","lm","lk",
+    "sk","st","sp","x","z"
+  ] as const,
+
+  maleEndings: [
+    "ius","ion","ior","iel","ian","or","ar","en","eth","azar","amon","oth","eus","eon","eran","iel","ior"
+  ] as const,
+
+  femaleEndings: [
+    "a","ia","ara","ella","elle","ine","ira","ora","yra","eia","etha","is","yne","riel","thea","assa"
+  ] as const,
+
+  lastNamePieces: {
+    left: [
+      // celestial & arcane motifs
+      "Star","Moon","Sun","Comet","Meteor","Eclipse","Nova","Nebula","Aurora","Twilight","Dawn","Dusk",
+      "Night","Sky","Storm","Cloud","Mist","Veil","Shade","Gloom","Glow","Light","Halo","Crown",
+      // mystic tools & symbols
+      "Rune","Sigil","Glyph","Circle","Seal","Ward","Omen","Augur","Oracle","Vision","Dream",
+      "Scroll","Tome","Page","Quill","Ink","Candle","Lantern","Mirror","Crystal","Prism","Opal","Amber","Onyx","Ivory","Quartz",
+      // occult substances & forces
+      "Aether","Mana","Arcane","Eldritch","Mystic","Occult","Astral","Celestial","Void","Umbra","Lumen","Ether","Nimbus",
+      // poetic colors & tones
+      "Silver","Golden","Gilded","Sable","Azure","Indigo","Violet","Crimson","Carmine","Pale","Bright","Hollow",
+      // places & orders
+      "Spire","Tower","Sanctum","College","Order","Cabal","Coven","Library","Observatory","Labyrinth","Circle","Cloister"
+    ] as const,
+
+    right: [
+      // roles and crafts
+      "weaver","binder","caller","singer","walker","watcher","seer","scribe","speaker","keeper","warden","reader",
+      "wright","maker","shaper","mender","seeker","bearer","bringer","tamer","warden","warden",
+      // arcane epithets
+      "mage","magus","thaumaturge","enchanter","conjuror","invoker","illusionist","transmuter","diviner","astrologer","alchemist","necromancer",
+      // poetic/elemental
+      "light","glow","spark","flare","flare","ember","flame","star","moon","shadow","shade","gleam","ray","beam","gaze",
+      // symbolic nouns
+      "veil","spell","charm","hex","sigil","rune","glyph","scroll","page","codex","orb","staff","wand","focus","mirror"
+    ] as const,
+  },
+
+  titles: [
+    "the Archmage","the Star-Crowned","the Moonlit","the Veil-Speaker","the Rune-Binder",
+    "the Keeper of Tomes","the Seer of Seven Paths","the Astral Walker","the Silver Sage",
+    "the Watcher at Twilight","the Candle in Gloom","the Oracle of Dawn","the Weaver of Signs",
+    "the Dreaming Scholar","the Binder of Names","the Spellwright","the Reader of Ashes",
+    "the Umbra Lord","the Lumen Ward","the Master of the Ninth Circle","the Cloud-Reader",
+    "the Mirror Hermit","the Gilded Owl","the Prism Adept","the Storm-Scribe","the Aether-Born",
+    "the Night’s Lantern","the Comet’s Tail","the Sage of the Hollow Light","the Keeper of the Azure Tower"
+  ] as const,
+
+  titlePieces: {
+    left: [
+      // nouns/adjectives to start titles
+      "Star","Moon","Sun","Twilight","Dawn","Dusk","Night","Eclipse","Aurora","Comet","Nova","Nebula",
+      "Astral","Celestial","Aether","Void","Umbra","Lumen","Prism","Crystal","Opal","Onyx","Ivory","Silver","Gilded","Azure","Indigo","Violet",
+      "Rune","Sigil","Glyph","Circle","Ward","Seal","Veil","Mirror","Lantern","Candle","Scroll","Tome","Codex","Spire","Tower","Sanctum","Observatory",
+      "Arcane","Eldritch","Mystic","Occult","Hidden","Veiled","Silent","Hollow","Secret","Forgotten","Eternal","Bound","Named","Nameless"
+    ] as const,
+
+    right: [
+      // roles/epithets to end titles
+      "mage","magus","archmage","adept","sage","seer","oracle","augur","diviner",
+      "spellbinder","spellwright","runecaller","runesmith","enchanter","invoker","conjuror","illusionist","transmuter",
+      "keeper","warden","watcher","walker","speaker","scholar","hermit","archivist","cartomancer","astrologer","alchemist",
+      "light","shadow","veil","flame","spark","gaze","crown","mantle","hand","eye","voice"
+    ] as const,
+
+    comboWeight: 0.6
+  },
+
+  patterns: [
+    // smoother, lyrical patterns with soft clusters and diphthongs
+    "CVC","CVVC","CVCV","CVVCV","SCV","SCVC","SV","SVCE","SCVSV","CVCEV","CVCCV","SVCV"
+  ] as const,
+};
+
+export const HERO: themePool = {
+  consonants: [
+    "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+    "br","cr","dr","gr","pr","tr","vr","fr","fl","pl","cl","gl","bl",
+    "th","st","str","sk","sc","sp"
+  ] as const,
+
+  vowels: [
+    "a","e","i","o","u",
+    "ae","ea","ia","io","oi","ou","ui","ei","au","oa","ue","eo"
+  ] as const,
+
+  clustersStart: [
+    "br","cr","dr","gr","pr","tr","vr",
+    "fr","fl","pl","cl","gl","bl",
+    "th","st","str","sk","sp"
+  ] as const,
+
+  clustersEnd: [
+    "rd","rt","rn","rm","rl","rk","rg",
+    "ld","lt","lm","lk",
+    "nd","nt","ng",
+    "st","sk","sp",
+    "th","x","z"
+  ] as const,
+
+  maleEndings: [
+    "an","ar","or","en","on","ion","ius","eus","ric","mir","vald","helm","brand","hart","gar","dran"
+  ] as const,
+
+  femaleEndings: [
+    "a","ia","ara","ina","ella","elle","ine","ora","essa","eth","is","wyn","lyn","thea","arae"
+  ] as const,
+
+  lastNamePieces: {
+    left: [
+      // heroic elements, beasts, virtues, and regalia
+      "Sun","Dawn","Day","Star","Sky","Storm","Thunder","Lightning","Cloud",
+      "Light","Radiance","Beacon","Crown","Banner","Standard","Laurel",
+      "Iron","Steel","Stone","Oak","Ash","Elm","Willow","River","Vale","Hill","Mountain",
+      "Lion","Wolf","Hawk","Eagle","Falcon","Bear","Stag","Hound","Ram","Bull","Griffin","Dragon",
+      "Golden","Silver","Crimson","Azure","Ivory","Onyx","Bright","Noble","Valiant","Just","True","Bold","Free","Stalwart","Gallant",
+      "Sword","Shield","Spear","Lance","Hammer","Bow","Arrow","Helm","Mantle","Gauntlet"
+    ] as const,
+
+    right: [
+      // roles, deeds, and symbolic nouns (lowercase)
+      "blade","shield","spear","sword","lance","hammer","arrow","helm","mantle","banner",
+      "rider","runner","walker","watch","guard","warden","keeper","bearer","breaker","defender","savior","champion","hero",
+      "king","queen","lord","lady","prince","princess","marshal","captain",
+      "heart","hand","helm","brow","crown","light","flame","star","oath","honor","glory","virtue","valor","hope"
+    ] as const,
+  },
+
+  titles: [
+    "the Bold","the Lionhearted","the Unbroken","the Valiant","the Just",
+    "the Dawnbringer","the Storm-Born","the Dragonsbane","the Shield of the Realm",
+    "the Sword of the West","the Guardian of the Gate","the Crown’s Hand","the Banner-Bearer",
+    "the Light of Morning","the Oak-Warden","the Iron Vigil","the Sky Rider",
+    "the Wolf of the North","the Eagle of the Heights","the Stag-Knight","the Hammer of Kings",
+    "the Hope of the People","the Unfallen","the True of Heart","the Golden Mantle"
+  ] as const,
+
+  titlePieces: {
+    left: [
+      // nouns/adjectives to start titles
+      "Sun","Dawn","Day","Morning","Star","Sky","Storm","Thunder","Lightning","Cloud",
+      "Light","Radiant","Golden","Silver","Crimson","Azure","Ivory","Onyx","Bright","Noble","Valiant","Just","True","Bold","Free","Stalwart","Gallant",
+      "Lion","Wolf","Eagle","Hawk","Stag","Bear","Dragon","Griffin",
+      "Oak","Iron","Steel","Stone","Sword","Shield","Spear","Hammer","Banner","Crown","Laurel","Mantle","Helm"
+    ] as const,
+
+    right: [
+      // roles/epithets to end titles (lowercase)
+      "hero","champion","knight","warden","guardian","keeper","watcher","rider","walker","sentry","marshal","captain",
+      "sword","shield","spear","hammer","blade","banner","crown","mantle","hand","heart","light","flame","voice"
+    ] as const,
+
+    comboWeight: 0.5
+  },
+
+  patterns: [
+    // open, bold syllables with strong liquids and stops
+    "CVC","CVCV","CVCCV","SCVC","SCVCV","CVCVC","CVVC","CVVCV","SV","SVCV","CVCCVC"
+  ] as const,
+};
 
 export const FORGE: themePool = {
   consonants: [
@@ -277,7 +473,7 @@ export const SEA: themePool = {
 
 }
 
-export const EARTH: themePool = {
+export const EARTH_DWARF: themePool = {
     consonants: ["b","d","f","g","h","k","l","m","n","r","s","t","v","w","y","z"],
     vowels: ["a","e","i","o","u"],
     clustersStart: ["br","dr","gr","kr","st","str","tr","wr","th","sk"] as const,

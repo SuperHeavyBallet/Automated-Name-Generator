@@ -1,8 +1,8 @@
 import { pick, type NonEmptyArray, capitalize } from "./util.js";
-import { EARTH } from "./themes.data.js";
+import type { themePool } from "./themes.data.js";
 import type { RNG } from "./rng.js";
 
-type Pools = typeof EARTH;
+type Pools = themePool;
 
 
 const toTitle = (s: string, rnd: RNG) => {

@@ -1,5 +1,4 @@
 import { pick, capitalize } from "./util.js";
-import { EARTH } from "./themes.data.js";
 const toTitle = (s, rnd) => {
     // If it already begins with "the" or "of", leave as-is
     if (/^(the|of)\b/i.test(s))

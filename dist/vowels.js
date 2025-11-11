@@ -1,5 +1,4 @@
 import { startsWithConsonant, endsWithConsonant } from "./consonants.js";
-import { EARTH } from "./themes.data.js";
 /// Vowels
 const MICRO_VOWELS = ["a", "e", "i", "o", "u", "y"];
 function pickMicroVowel(rnd) {

@@ -1,8 +1,8 @@
 import { startsWithConsonant, endsWithConsonant } from "./consonants.js";
 import type { RNG } from "./rng.js";
-import { EARTH} from "./themes.data.js";
+import type { themePool } from "./themes.data.js";
 
-type Pools = typeof EARTH;
+type Pools = themePool;
 
 /// Vowels
 const MICRO_VOWELS = ["a","e","i","o","u","y"] as const;
