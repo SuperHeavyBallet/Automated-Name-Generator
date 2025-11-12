@@ -1,0 +1,275 @@
+{
+    "EARTH": {
+        "consonants": ["b", "d", "f", "g", "h", "k", "l", "m", "n", "r", "s", "t", "v", "w", "y", "z"],
+        "vowels": ["a", "e", "i", "o", "u"],
+        "clustersStart": ["br", "dr", "gr", "kr", "st", "str", "tr", "wr", "th", "sk"],
+        "clustersEnd": ["rk", "rn", "rd", "st", "ld", "nd", "lm", "lt", "th", "sk"],
+        "maleEndings": ["ar", "an", "or", "un", "eth", "dur", "gar", "thorn", "ric"],
+        "femaleEndings": ["a", "ia", "ara", "ela", "ina", "ora", "una", "yth", "wyn"],
+        "lastNamePieces": {
+            "left": [
+                "Stone", "Oak", "Mud", "Clay", "Moss", "Root", "Ridge", "Fell", "Iron", "Ash",
+                "Soil", "Grain", "Dust", "Silt", "Loam", "Gravel", "Pebble", "Rock", "Boulder", "Shard",
+                "Flint", "Chalk", "Slate", "Shale", "Ore", "Coal", "Char", "Basalt", "Grit", "Crag",
+                "Fern", "Thorn", "Branch", "Twig", "Briar", "Reed", "Bracken", "Thicket", "Weed", "Stem",
+                "Bloom", "Petal", "Bud", "Leaf", "Vine", "Ivy", "Elm", "Birch", "Pine", "Cedar", "Willow",
+                "Marsh", "Bog", "Mire", "Pond", "Brook", "Creek", "Well", "Spring", "Stream", "Pool",
+                "Wave", "Current", "Flow", "Rain", "Dew", "Mist", "Fog", "Drift",
+                "Cave", "Cavern", "Hollow", "Vale", "Ravine", "Gorge", "Hill", "Peak", "Mount", "Summit",
+                "Slope", "Spire", "Crust", "Core", "Rootstone", "Bedrock",
+                "Bronze", "Copper", "Silver", "Steel", "Lead", "Tin", "Rust", "Brass", "Anvil", "Hammer",
+                "Forge", "Tongs", "Chain", "Gear", "Nail", "Rivet",
+                "Bone", "Skull", "Horn", "Hide", "Fang", "Claw", "Scale", "Talon", "Shell", "Tooth",
+                "Spore", "Mold", "Fur", "Mane", "Ashen", "Dusty", "Rubble",
+                "Hearth", "Field", "Barrow", "Burrow", "Warren", "Den", "Hollow", "Glen", "Meadow",
+                "Valley", "Plain", "Trail", "Path", "Way", "Road", "Track", "Gate", "Bridge", "Wall",
+                "Tower", "Keep", "Hold", "Watch"
+            ],
+            "right": [
+                "binder", "walker", "ward", "borne", "mason", "hewer", "keeper", "briar", "hand", "weaver",
+                "smith", "maker", "wright", "carver", "tiller", "miller", "baker", "brewer", "tanner", "potter",
+                "fletcher", "hunter", "herder", "digger", "planter", "grower", "miner", "forger", "founder", "wheeler",
+                "warden", "guard", "watcher", "seeker", "warden", "warden", "scout", "tracker", "reaver", "sentry",
+                "keeper", "protector", "caller", "runner", "bearer", "driver", "rider", "hauler", "chaser", "herald",
+                "born", "blood", "kin", "folk", "spawn", "bloom", "root", "seed", "song", "shade", "thorn", "bark", "branch",
+                "moss", "stone", "ash", "ember", "dust", "flame", "vale", "glen", "field", "mead", "brook", "reach", "shore",
+                "moulder", "hammer", "chisel", "seam", "cord", "thread", "stitch", "loom", "spinner", "sealer",
+                "joiner", "lasher", "winder", "weaver", "patcher", "draper", "dyer", "hewer", "splitter", "rivet",
+                "wander", "roamer", "dweller", "settler", "nester", "denner", "burrower", "hillman", "bogman", "marshman",
+                "woodsman", "caveman", "deepdelver", "pathfinder", "stoneward", "grovekeeper", "riverhand", "waywatch", "gatekeeper",
+                "brand", "thane", "helm", "fang", "heart", "shard", "brow", "bane", "song", "gleam", "hide", "horn",
+                "tooth", "vein", "root", "forge", "anvil", "craft", "bond", "mark", "mantle", "veil"
+            ]
+        },
+        "titles": [
+            "the Builder", "the Mason", "the Forager", "the Ironhand",
+            "the Oakborn", "the Stonebinder", "the Wayfinder", "the Hearthward",
+            "the Woodcarver", "the Clayshaper", "the Flinthewer", "the Rootbinder", "the Mudmason",
+            "the Anvilkeeper", "the Quarryman", "the Millwright", "the Smithkin", "the Toolwright",
+            "the Wainmaker", "the Fieldtiller", "the Grainmiller", "the Loomhand", "the Wheelwright",
+            "the Pathseeker", "the Trailwalker", "the Farstrider", "the Hillwanderer", "the Hollowdweller",
+            "the Caveseer", "the Mirewatcher", "the Fenwarden", "the Burrowguard", "the Stonewatch",
+            "the Deepdelver", "the Gatekeeper", "the Wayward", "the Glenranger", "the Mosswalker",
+            "the Thornborn", "the Barkblood", "the Mosshearted", "the Rootfather", "the Soilmother",
+            "the Ashen", "the Dustborn", "the Bramblewise", "the Seedkeeper", "the Sproutling",
+            "the Wildspoken", "the Oakseer", "the Dewtouched", "the Fogchild", "the Raincaller",
+            "the Emberwake", "the Coalbearer", "the Stormforged", "the Groundwrought", "the Hearthbound",
+            "the Stillhand", "the Truehewer", "the Stonevein", "the Quietforge", "the Dustsleeper",
+            "the Greymantle", "the Brokenroot", "the Boundless", "the Lowborn", "the Lastwarden",
+            "the Soilshaper", "the Deepspoken", "the Oldkeeper", "the Nightforge", "the Riverhand",
+            "the Thornforged", "the Ashmender", "the Mudwrought", "the Earthdreamer", "the Weighted",
+            "the First Mason", "the Last Digger", "the Hearthmother", "the Rootfather",
+            "the Stone Singer", "the River Caller", "the Flintspeaker", "the Soil Reader",
+            "the Moss Saint", "the Hollow King", "the Barrow Wife", "the Grove Keeper",
+            "the Ember Seer", "the Hillmaker", "the Road Founder", "the Earth-Bound",
+            "the Iron Voice", "the Loam Dreamer", "the Quarry Saint", "the Deep Forged",
+            "the Throat Cursed", "the Cursed Tongue", "the Barbed Saint", "the Wicked Rose",
+            "the Quarven Forged",
+            "Old Stepper", "Fellfoot",
+            "of Fell Times", "of Stonemounds", "of Elder Storms"
+        ],
+        "titlePieces": {
+            "left": [
+                "Stone", "Rock", "Clay", "Dust", "Loam", "Grit", "Flint", "Shale", "Slate", "Basalt", "Gravel", "Silt", "Pebble", "Mire",
+                "Moss", "Lichen", "Root", "Thorn", "Briar", "Vine", "Fern", "Weed", "Spore", "Mold", "Fung", "Murk", "Ash", "Ember",
+                "Hill", "Vale", "Glen", "Crag", "Ridge", "Tor", "Cairn", "Barrow", "Wold", "Hollow", "Cave", "Pit", "Deep", "Den",
+                "Burrow", "Well", "Spring", "Brook", "Stream", "Field", "Plain", "Ravine", "Gorge", "Meadow", "Trail", "Path", "Road",
+                "River", "Way",
+                "Forge", "Anvil", "Hammer", "Tongs", "Bellows", "Spade", "Pick", "Plow", "Wheel", "Cart", "Chisel", "Brick", "Pot",
+                "Oven", "Kiln", "Coal", "Smoke", "Ashen", "Cinder", "Char", "Dam",
+                "Bone", "Skull", "Horn", "Hide", "Fang", "Talon", "Shell", "Pelt", "Tooth", "Claw", "Heart", "Blood", "Seed", "Bark",
+                "Rain", "Snow", "Frost", "Mist", "Fog", "Storm", "Dew", "Drift", "Shade", "Blight", "Sun", "Wind", "Rime", "Echo",
+                "Chill", "Cloud", "Heat", "Grey", "Dark", "Low", "High", "Old", "Ancient", "Silent", "Bound", "Lost", "Woken", "Grave",
+                "Hearth", "Home", "Iron", "Bronze", "Copper",
+                "Last", "Broken", "Smit", "Cull", "Call", "Fond", "Grut", "Kind", "Abhor", "Sharp", "Soft", "Wind", "Ember",
+                "Kindle", "Wither", "Worry", "Dim", "Ever", "Bright", "All", "Oft", "Ne'er", "Low", "Wisp", "Dusk", "Wind",
+                "Rain", "Storm"
+            ],
+            "right": [
+                "smith", "wright", "maker", "hewer", "carver", "forger", "binder", "mender", "weaver", "spinner", "tiller", "miller",
+                "planter", "grower", "digger", "miner", "brewer", "tanner", "potter", "baker", "founder", "builder",
+                "warden", "keeper", "watcher", "ward", "guard", "seeker", "wander", "walker", "runner", "scout", "pathfinder",
+                "wayfarer", "delver", "dweller", "hermit", "herald", "tender", "guardian", "minder", "din", "brook",
+                "born", "bound", "blood", "heart", "soul", "fang", "claw", "horn", "song", "root", "bark", "bloom", "thorn", "stone",
+                "moss", "ash", "ember", "flame", "spark", "dust", "shade", "veil", "dream", "sleep", "call", "cry",
+                "thane", "lord", "chief", "elder", "saint", "seer", "caller", "speaker", "hand", "foot", "eye", "voice", "tongue",
+                "vein", "forge", "brand", "mark", "helm", "mantle", "crown", "spirit",
+                "breaker", "riser", "bearer", "bringer", "eater", "drinker", "sower", "reaper", "harrower", "bender", "wrought",
+                "forged", "shaped", "shaper", "maker", "tamer", "waker", "dreamer", "fallen",
+                "known", "knowing", "keen", "soft", "wood", "soot", "dust"
+            ],
+            "comboWeight": 0.5
+        },
+        "patterns": [
+            "CVC", "CVCC", "SCV", "CVCV", "CVCVC", "SCVC", "SCVCV", "CVCEC"
+        ]
+    },
+    "WATER": {
+        "consonants": ["b", "d", "f", "g", "h", "k", "l", "m", "n", "r", "s", "t", "v", "w", "z", "sh", "th", "ch"],
+        "vowels": ["a", "e", "i", "o", "u", "ae", "oo"],
+        "clustersStart": ["br", "cr", "dr", "fr", "gl", "gr", "kr", "sh", "sl", "sm", "sn", "sw", "th", "tr", "wh"],
+        "clustersEnd": ["rn", "rd", "rl", "th", "sh", "st", "nd", "sk", "ll", "m", "n", "s", "r", "ng"],
+        "maleEndings": ["ar", "en", "or", "un", "ion", "ath", "ain", "oth", "mar", "ric"],
+        "femaleEndings": ["a", "ia", "ara", "ona", "ina", "ora", "una", "elle", "yra", "ith", "wen", "isa", "ala", "ys", "aria", "ela"],
+        "lastNamePieces": {
+            "left": [
+                "Wave", "Tide", "Foam", "Salt", "Shell", "Coral", "Reef", "Swell", "Drift", "Gale",
+                "Spray", "Storm", "Wind", "Mist", "Current", "Deep", "Surf", "Anchor", "Keel", "Sail",
+                "Harbor", "Bay", "Cove", "Lagoon", "Pearl", "Marsh", "Brook", "Spume", "Dew", "Rill"
+            ],
+            "right": [
+                "born", "breaker", "caller", "ward", "watch", "keeper", "singer", "walker", "weaver", "mender",
+                "rider", "sailor", "diver", "binder", "fisher", "hunter", "mariner", "seeker", "finder", "flow",
+                "song", "chant", "foam", "crest", "heart", "hand", "kin", "tide", "gleam", "shard"
+            ]
+        },
+        "titles": [
+            "the Seabound", "the Tideborn", "the Drifted", "the Storm-Called", "the Wavekeeper",
+            "the Deepwalker", "the Saltwise", "the Shellward", "the Grey Current", "the Sailbroken",
+            "the Windtouched", "the Foam-Singer", "the Pearlforged", "the Drowned", "the Coral Seer",
+            "the Mariner", "the Longshore", "the Whale-Friend", "the Mistbound", "the Stormwrought",
+            "of Stormsea", "of Windache", "of Fellrocks", "of Fellwind", "of Dimshore"
+        ],
+        "titlePieces": {
+            "left": [
+                "Salt", "Wave", "Tide", "Drift", "Storm", "Mist", "Foam", "Coral", "Reef", "Shell",
+                "Spray", "Wind", "Gale", "Current", "Deep", "Anchor", "Keel", "Sail", "Harbor", "Bay",
+                "Cove", "Lagoon", "Pearl", "Marsh", "Brook", "Spume", "Dew", "Rill", "Whale", "Shark",
+                "Fin", "Kraken", "Serpent", "Levi", "Tempest", "Swell", "Breaker", "Fog", "Sea", "Blue",
+                "Drown", "Mariner", "Rime", "Cold", "Grey", "Sunken", "Moon", "Star", "Compass", "North",
+                "South", "East", "West", "Silver", "Foam", "Surge", "Whisper", "Echo", "Dune", "Corvid",
+                "Oar", "Deck", "Hold", "Bilge", "Plank", "Harpoon", "Cannon", "Gull", "Crow", "Albatross",
+                "Barnacle", "Sponge", "Brine", "Ship", "Fleet", "Voyage", "Mast", "Wreck", "Rudder", "Reefed",
+                "Tangle", "Line", "Knot", "Cord", "Net", "Hook", "Bait", "Catch", "Wander", "Rover", "Privateer",
+                "Corsair", "Rogue", "Black", "Red", "Iron", "Golden", "Broken", "Lost", "Sun", "Moonlit",
+                "Levia"
+            ],
+            "right": [
+                "wave", "beam", "brok", "weave", "slip", "shore", "breaker", "caller", "keeper",
+                "singer", "walker", "weaver", "watch", "mender", "rider", "sailor",
+                "diver", "binder", "fisher", "hunter", "mariner", "seeker", "finder", "flow", "song", "chant",
+                "foam", "crest", "heart", "hand", "kin", "tide", "gleam", "shard", "fang", "tooth", "veil", "cry",
+                "brand", "born", "bound", "blood", "dream", "wake", "shade", "ghost", "spirit", "tongue", "voice",
+                "seer", "eye", "watcher", "warden", "keeper", "captain", "mate", "bosun", "pilot", "gunner", "cook",
+                "swain", "rigger", "reever", "wrecker", "raider", "reaver", "runner", "strider", "slinger", "shaper",
+                "sower", "drifter", "wander", "rover", "buoy", "haunt", "hauler", "forged", "wrought", "tamer",
+                "shanty", "chant", "call", "prayer", "anchor", "helm", "chain", "oath", "mark", "bane", "crown", "born",
+                "child", "soul", "bringer", "dreamer", "breaker"
+            ],
+            "comboWeight": 0.5
+        },
+        "patterns": [
+            "CVV", "CVC", "SCV", "CVCV", "CVVC", "SCVCV", "CVCE", "CVVCV", "SVCV"
+        ]
+    },
+    "FIRE": {
+        "consonants": ["b", "c", "d", "f", "g", "h", "k", "l", "m", "n", "p", "r", "s", "t", "v", "x", "z",
+            "br", "cr", "dr", "gr", "kr", "st", "str", "tr", "vr"],
+        "vowels": ["a", "e", "i", "o", "u", "ai", "ei", "ou", "au", "ia"],
+        "clustersStart": ["br", "cr", "dr", "gr", "kr", "st", "str", "tr", "vr", "fl", "fr", "gl", "sm", "sn", "sp"],
+        "clustersEnd": ["rk", "rn", "rd", "st", "lt", "nd", "ld", "sk", "sm", "ct", "x", "th", "nz", "gz"],
+        "maleEndings": ["ar", "orn", "an", "rak", "gar", "grim", "gath", "dur", "thor", "vald", "rek", "gan", "zor", "gim", "yol", "thol"],
+        "femaleEndings": ["a", "ia", "ara", "ira", "ona", "yna", "ora", "eth", "ryn", "is", "yne", "ara", "ika", "akath", "ara", "mett", "sona"],
+        "lastNamePieces": {
+            "left": [
+                "Iron", "Steel", "Brass", "Bronze", "Copper", "Cinder", "Coal", "Ash", "Flame", "Forge",
+                "Hammer", "Anvil", "Gear", "Cog", "Smoke", "Steam", "Spark", "Ember", "Soot", "Furnace",
+                "Blaze", "Char", "Fuel", "Oil", "Rivet", "Chain", "Piston", "Plate", "Wire", "Nail", "Beam",
+                "Crucible", "Slag", "Powder", "Bolt", "Torch", "Gun", "Bullet", "Fire", "Steel", "Rust",
+                "Red", "Smol"
+            ],
+            "right": [
+                "hand", "smith", "maker", "wright", "worker", "forged", "caster", "warden", "founder",
+                "breaker", "mender", "walker", "runner", "bearer", "thrower", "tamer", "keeper", "lord",
+                "brand", "hammer", "burner", "grinder", "engine", "master", "engineer", "gear", "bolt",
+                "jaw", "core", "heart", "grip", "forge", "blast", "fang", "strike", "fire", "spark"
+            ]
+        },
+        "titles": [
+            "the Forged", "the Ironblood", "the Ashborne", "the Fire-Tongued", "the Gearwrought",
+            "the Smokehand", "the Emberborn", "the Steelheart", "the Hammer-Seer", "the Rusted",
+            "the Chainlord", "the Sparkmason", "the Cinderbound", "the Blazewalker", "the Flameforged",
+            "the Molten", "the Anvilking", "the Ironclad", "the Cogwrought", "the Warborn",
+            "the Brass Saint", "the Steel Prophet", "the Furnace-Mind", "the Powderhand", "the Gunfather",
+            "the Rivetqueen", "the Sparkbringer", "the Warwright", "the Kilnborne", "the Flame-Eater",
+            "the Mechanist", "the Firevein", "the Char-Eyed", "the Red Warden", "the Heatkeeper",
+            "the Foundry Ghost", "the Slagforged", "the Machinebound", "the Cinderwalker", "the Last Spark",
+            "the Brazen", "the Blasted", "The Smoten", "The Barrage"
+        ],
+        "titlePieces": {
+            "left": [
+                "Iron", "Steel", "Bronze", "Brass", "Copper", "Cinder", "Coal", "Ash", "Flame", "Fire",
+                "Forge", "Hammer", "Anvil", "Gear", "Cog", "Smoke", "Steam", "Spark", "Ember", "Soot",
+                "Furnace", "Blaze", "Char", "Fuel", "Oil", "Rivet", "Chain", "Piston", "Plate", "Wire",
+                "Nail", "Beam", "Slag", "Powder", "Bolt", "Torch", "Gun", "Bullet", "Rust", "Ore", "Ingot",
+                "Smelt", "Cast", "Alloy", "Bar", "Metal", "Scrap", "Ironclad", "Molten", "Crucible",
+                "Tongs", "Clamp", "Clamp", "Bellows", "Turbine", "Rod", "Pipe", "Rivet", "Razor", "Saw",
+                "Grinder", "Drill", "Sprocket", "Lever", "Mach", "Mill", "Wheel", "Track", "Core", "Sparkplug",
+                "Flame", "Blaze", "Inferno", "Pyre", "Kindle", "Torch", "Cinder", "Ashen", "Charred", "Smoulder",
+                "Scorch", "Heat", "Burn", "Fume", "Gleam", "Glow", "Radiant", "Solar", "Ignis", "Fervor", "Core",
+                "Lava", "Magma", "Fume", "Coal", "Molten", "Sear", "Smelt", "Smog", "Tempest", "Weld", "Wick",
+                "Forge", "Hammer", "Anvil", "Tongs", "Bellows", "Tool", "Mallet", "Pincer", "Weld", "Joint",
+                "Bolt", "Chain", "Gear", "Cog", "Axle", "Spindle", "Frame", "Cast", "Mold", "Furnace", "Smith",
+                "Foundry", "Mill", "Crank", "Rod", "Piston", "Plate", "Lathe", "Drill", "Vice", "Wedge", "Clamp",
+                "Press", "Fitter", "Engineer", "Craft", "Mech", "Mach", "Engine", "Boiler", "Valve", "Kiln",
+                "Workshop", "Temple", "Shrine", "Chamber", "Vault", "Press", "Smelter", "Foundry", "Mason",
+                "Sun", "Solar", "Infernal", "Heaven", "Hell", "Star", "Meteor", "Comet", "Falling", "Red",
+                "Golden", "Blazing", "Burning", "Sacred", "Holy", "Hellforged", "Storm", "Thunder", "Sparked",
+                "God", "Titan", "Devil", "Saint", "Sainted", "Angel", "Demon", "Flare", "Glory", "Blessed",
+                "Oath", "Vow", "Covenant", "Judged", "Trial", "Eternal", "Fallen", "Bound", "Brand", "Mark",
+                "Engine", "Machine", "Gunner", "Blast", "Powder", "Bullet", "Shot", "Barrel", "Cannon", "Gun",
+                "Tank", "Chamber", "Charge", "Reactor", "Steelborn", "Ironbound", "War", "Siege", "Titan",
+                "Piston", "Steam", "Boiler", "Smoke", "Spark", "Crank", "Sprocket", "Rod", "Frame", "Plating",
+                "Core", "Crucible", "Magma", "Power", "Fury", "Wrath", "Pulse", "Force", "Gear", "Piston",
+                "Red", "Black", "Dark", "Bright", "Silent", "Feral", "Forged", "Bound", "Broken", "Struck",
+                "Shattered", "Tempered", "Risen", "Molten", "Cold", "Hot", "Gilded", "Wrought", "Burning",
+                "Smoking", "Bitter", "Stained", "Welded", "Carved", "Cut", "Etched", "Marked", "Branded",
+                "Gleaming", "Scarred", "Scorched", "Vulcan", "Aether", "Ablaze", "Kindled", "Lit", "Fallen",
+                "Shining", "Chained", "Oiled", "Gutted", "Rusted", "Refined", "Hardened", "Wrought", "Woken",
+                "Vulcan", "Ferrum", "Pyra", "Caldera", "Ferro", "Smite", "Furn", "Ignar", "Helm", "Thane",
+                "Ankar", "Karn", "Mor", "Dur", "Rak", "Gath", "Brim", "Zor", "Vald", "Thor", "Durak", "Gan",
+                "Zirn", "Varn", "Gor", "Morr", "Durn", "Rauth", "Korr", "Grim", "Thuld", "Krak", "Voth", "Sarn",
+                "Smold", "Smed", "Heff", "Gren", "Gruff"
+            ],
+            "right": [
+                "smith", "wright", "maker", "founder", "forger", "molder", "smelter", "welder", "binder",
+                "caster", "engraver", "hewer", "hammer", "tinker", "builder", "joiner", "mechanist",
+                "engineer", "artisan", "crafter", "artisan", "mason", "riveter", "temperer", "chainer",
+                "fitter", "worker", "shaper", "melder", "plater", "sealer", "seamer", "grinder", "turner",
+                "molder", "roller", "fuser", "coiler", "burnisher", "polisher", "refiner", "etcher", "smither",
+                "warden", "keeper", "watcher", "protector", "guardian", "lord", "thane", "chief", "captain",
+                "seer", "saint", "prophet", "king", "queen", "bishop", "hand", "master", "patron", "idol",
+                "chosen", "father", "mother", "son", "daughter", "child", "bastion", "knight", "monk",
+                "scribe", "apostle", "acolyte", "priest", "speaker", "herald", "seer", "judge", "watch",
+                "sentry", "watcher", "bound", "oath", "vow", "brand", "scar", "mark", "mantle", "crown", "helm",
+                "mask", "tongue", "voice", "eye", "gaze", "shadow", "spirit", "soul", "flame", "ghost",
+                "fire", "flame", "ember", "ash", "smoke", "spark", "glow", "heat", "blaze", "fume", "soot",
+                "burn", "char", "core", "heart", "soul", "fury", "wrath", "rage", "storm", "blast", "bolt",
+                "pulse", "current", "flow", "gleam", "flare", "shine", "glimmer", "light", "forge", "weld",
+                "magma", "lava", "coal", "iron", "steel", "brass", "cinder", "slag", "furnace", "pyre",
+                "inferno", "ember", "spark", "brand", "mark", "scar", "tide", "smelt", "heat", "fever",
+                "breaker", "bearer", "bringer", "seeker", "caller", "binder", "wrought", "forged", "waker",
+                "walker", "wander", "mender", "risen", "fallen", "bender", "riser", "turner", "shaper",
+                "sower", "drinker", "eater", "devourer", "harrower", "tamer", "striker", "reaper", "hammered",
+                "wielder", "fused", "melded", "temper", "keeper", "striker", "wrought", "found", "bound",
+                "machine", "engine", "boiler", "piston", "gear", "sprocket", "chain", "grip", "jaw", "core",
+                "spark", "blast", "barrel", "shell", "charge", "cog", "bolt", "gun", "shot", "flame", "blast",
+                "runner", "driver", "marcher", "walker", "crusher", "brawler", "breaker", "reaver", "warden",
+                "warlord", "captain", "marshal", "gunner", "rifler", "powderhand", "shard", "plate", "shell",
+                "shield", "hammer", "anvil", "forge", "chamber", "arm", "gauntlet", "hand", "fist",
+                "saint", "angel", "devil", "demon", "prophet", "apostle", "seraph", "idol", "witness", "judge",
+                "penitent", "martyr", "bound", "fallen", "redeemed", "cursed", "blessed", "vowed", "oathed",
+                "burned", "branded", "scarred", "forgiven", "judged", "doomed", "crowned", "torched",
+                "saint", "spirit", "ghost", "specter", "shade", "infernal", "holy", "divine", "unhallowed",
+                "born", "blood", "bound", "bane", "brand", "mark", "song", "dream", "shade", "vein", "hand",
+                "tongue", "voice", "eye", "heart", "soul", "crown", "helm", "mantle", "veil", "wake", "cry",
+                "howl", "chant", "call", "echo", "gift", "oath", "spark", "chain", "flame", "fire", "light",
+                "forge", "steel", "iron", "gear", "spark", "weld", "core", "pulse", "torch"
+            ],
+            "comboWeight": 0.5
+        },
+        "patterns": [
+            "CVC", "CVCC", "SCVC", "CVCV", "SVC", "CVVC", "SCVCV", "CVCEC", "CVCCV", "SVCC"
+        ]
+    }
+}

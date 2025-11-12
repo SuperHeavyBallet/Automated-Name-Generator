@@ -11,17 +11,13 @@ export type themePool = {
         right: NonEmptyArray<string>;
     };
     titles: NonEmptyArray<string>;
-    titlePieces?: {
+    titlePieces: {
         left: NonEmptyArray<string>;
         right: NonEmptyArray<string>;
-        comboWeight?: number;
+        comboWeight: number;
     };
     patterns: NonEmptyArray<string>;
 };
 export declare function getThemePool(theme: string, race: string): themePool | undefined;
 export declare const WIZARD: themePool;
-export declare const HERO: themePool;
-export declare const FORGE: themePool;
-export declare const SEA: themePool;
-export declare const EARTH_DWARF: themePool;
 //# sourceMappingURL=themes.data.d.ts.map

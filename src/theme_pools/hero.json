@@ -1,0 +1,74 @@
+{
+    "EARTH" : {
+        "consonants" : [
+            "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+            "br","cr","dr","gr","pr","tr","vr","fr","fl","pl","cl","gl","bl",
+            "th","st","str","sk","sc","sp"
+          ],
+        "vowels" :  [
+            "a","e","i","o","u",
+            "ae","ea","ia","io","oi","ou","ui","ei","au","oa","ue","eo"
+          ] ,
+        "clustersStart": [
+            "br","cr","dr","gr","pr","tr","vr",
+            "fr","fl","pl","cl","gl","bl",
+            "th","st","str","sk","sp"
+          ],
+        "clustersEnd": [
+            "rd","rt","rn","rm","rl","rk","rg",
+            "ld","lt","lm","lk",
+            "nd","nt","ng",
+            "st","sk","sp",
+            "th","x","z"
+          ],
+        "maleEndings": [
+            "an","ar","or","en","on","ion","ius","eus","ric","mir","vald","helm","brand","hart","gar","dran"
+          ],
+        "femaleEndings": [
+            "a","ia","ara","ina","ella","elle","ine","ora","essa","eth","is","wyn","lyn","thea","arae"
+          ],
+        "lastNamePieces": {
+          "left": [
+            "Sun","Dawn","Day","Star","Sky","Storm","Thunder","Lightning","Cloud",
+            "Light","Radiance","Beacon","Crown","Banner","Standard","Laurel",
+            "Iron","Steel","Stone","Oak","Ash","Elm","Willow","River","Vale","Hill","Mountain",
+            "Lion","Wolf","Hawk","Eagle","Falcon","Bear","Stag","Hound","Ram","Bull","Griffin","Dragon",
+            "Golden","Silver","Crimson","Azure","Ivory","Onyx","Bright","Noble","Valiant","Just","True","Bold","Free","Stalwart","Gallant",
+            "Sword","Shield","Spear","Lance","Hammer","Bow","Arrow","Helm","Mantle","Gauntlet"
+          ],
+          "right": [
+            "blade","shield","spear","sword","lance","hammer","arrow","helm","mantle","banner",
+            "rider","runner","walker","watch","guard","warden","keeper","bearer","breaker","defender","savior","champion","hero",
+            "king","queen","lord","lady","prince","princess","marshal","captain",
+            "heart","hand","helm","brow","crown","light","flame","star","oath","honor","glory","virtue","valor","hope"
+          ]
+        },
+        "titles" : [
+            "the Bold","the Lionhearted","the Unbroken","the Valiant","the Just",
+            "the Dawnbringer","the Storm-Born","the Dragonsbane","the Shield of the Realm",
+            "the Sword of the West","the Guardian of the Gate","the Crown’s Hand","the Banner-Bearer",
+            "the Light of Morning","the Oak-Warden","the Iron Vigil","the Sky Rider",
+            "the Wolf of the North","the Eagle of the Heights","the Stag-Knight","the Hammer of Kings",
+            "the Hope of the People","the Unfallen","the True of Heart","the Golden Mantle"
+        ],
+        "titlePieces": {
+          "left": [
+
+            "Sun","Dawn","Day","Morning","Star","Sky","Storm","Thunder","Lightning","Cloud",
+            "Light","Radiant","Golden","Silver","Crimson","Azure","Ivory","Onyx","Bright","Noble","Valiant","Just","True","Bold","Free","Stalwart","Gallant",
+            "Lion","Wolf","Eagle","Hawk","Stag","Bear","Dragon","Griffin",
+            "Oak","Iron","Steel","Stone","Sword","Shield","Spear","Hammer","Banner","Crown","Laurel","Mantle","Helm"
+          ],
+          "right":[
+            "hero","champion","knight","warden","guardian","keeper","watcher","rider","walker","sentry","marshal","captain",
+            "sword","shield","spear","hammer","blade","banner","crown","mantle","hand","heart","light","flame","voice", "walker",
+            "strider"
+    
+          ],
+          "comboWeight": 0.5
+        },
+        "patterns": [
+          "CVC","CVCV","CVCCV","SCVC","SCVCV","CVCVC","CVVC","CVVCV","SV","SVCV","CVCCVC"
+        ]
+      }
+}

@@ -1,7 +1,7 @@
 import { makeRNG } from "./rng.js";
 import { buildName } from "./builder.js";
   
-export type Theme = "earth" | "sea" | "forge";
+export type Theme = "earth" | "sea" | "forge" | "mix";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
