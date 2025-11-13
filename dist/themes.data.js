@@ -52,7 +52,8 @@ const dwarfEath = dwarfThemes.EARTH;
 const dwarfEarthPool = makeThemePool(dwarfThemes.EARTH);
 const dwarfWaterPool = makeThemePool(dwarfThemes.WATER);
 const dwarfFirePool = makeThemePool(dwarfThemes.FIRE);
-const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWaterPool, dwarfFirePool]));
+const dwarfAirPool = makeThemePool(dwarfThemes.AIR);
+const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWaterPool, dwarfFirePool, dwarfAirPool]));
 const wizardEarthPool = makeThemePool(wizardThemes.EARTH);
 const heroEarthPool = makeThemePool(heroThemes.EARTH);
 export function getThemePool(theme, race) {
@@ -61,6 +62,7 @@ export function getThemePool(theme, race) {
             case "earth": return dwarfEarthPool;
             case "sea": return dwarfWaterPool;
             case "forge": return dwarfFirePool;
+            case "air": return dwarfAirPool;
             case "mix": return dwarfMixedPool;
         }
     }

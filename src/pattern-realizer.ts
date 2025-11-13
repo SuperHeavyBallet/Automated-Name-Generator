@@ -5,7 +5,7 @@ import type { Limits } from "./limits.js";
 import { withinBudget } from "./limits.js";
 import { insertVowelBreaks, withLinkingVowel } from "./vowels.js";
 
-export type Theme = "earthy" | "sea" | "forge";
+
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 

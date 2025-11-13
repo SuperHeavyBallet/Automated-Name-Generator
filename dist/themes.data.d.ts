@@ -1,4 +1,5 @@
 import type { NonEmptyArray } from "./util.js";
+export type Theme = "earth" | "sea" | "forge" | "air" | "mix";
 export type themePool = {
     consonants: NonEmptyArray<string>;
     vowels: NonEmptyArray<string>;

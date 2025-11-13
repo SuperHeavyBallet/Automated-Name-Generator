@@ -4,6 +4,9 @@ import dwarfThemes from "./theme_pools/dwarf.json" with { type: "json" };
 import wizardThemes from "./theme_pools/wizard.json" with { type: "json" };
 import heroThemes from "./theme_pools/hero.json" with { type: "json"};
 
+
+export type Theme = "earth" | "sea" | "forge" | "air" | "mix";
+
 function isNonEmptyStringArray(a: unknown): a is NonEmptyArray<string> {
   return Array.isArray(a) && a.length > 0 && a.every(s => typeof s === "string");
 }
@@ -55,7 +58,8 @@ const dwarfEath = dwarfThemes.EARTH;
 const dwarfEarthPool = makeThemePool(dwarfThemes.EARTH);
 const dwarfWaterPool = makeThemePool(dwarfThemes.WATER);
 const dwarfFirePool = makeThemePool(dwarfThemes.FIRE);
-const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWaterPool, dwarfFirePool]));
+const dwarfAirPool = makeThemePool(dwarfThemes.AIR);
+const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWaterPool, dwarfFirePool, dwarfAirPool]));
 
 const wizardEarthPool = makeThemePool(wizardThemes.EARTH);
 
@@ -94,6 +98,7 @@ export function getThemePool(theme: string, race : string)
       case "earth" : return dwarfEarthPool;
       case "sea" : return dwarfWaterPool;
       case "forge" : return dwarfFirePool;
+      case "air" : return dwarfAirPool;
       case "mix" : return dwarfMixedPool;
     }
   }

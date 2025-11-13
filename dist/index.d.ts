@@ -1,4 +1,4 @@
-export type Theme = "earth" | "sea" | "forge" | "mix";
+import type { Theme } from "./themes.data.js";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 export type NameOptions = {

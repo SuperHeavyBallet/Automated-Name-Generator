@@ -324,6 +324,60 @@
         "patterns": [
           "CVC","CVCC","SCVC","CVCV","SVC","CVVC","SCVCV","CVCEC","CVCCV","SVCC"
         ]
-      }
+      },
+      "AIR": {
+    "consonants": [
+      "b","d","f","g","h","k","l","m","n","r","s","t","v","w",
+      "br","dr","gr","kr","st","str","thr","fr","wr","gl","sn"
+    ],
+    "vowels": [
+      "a","e","i","o","u","ae","ai","oi","ua","au"
+    ],
+    "clustersStart": [
+      "br","dr","fr","gr","kr","st","thr","wr","wh","sn","kl","gl"
+    ],
+    "clustersEnd": [
+      "rn","rk","rm","rf","rd","st","ft","ld","lk","nd","th","n","m","r","s"
+    ],
+    "maleEndings": [
+      "ar","en","orn","ur","ain","an","or","un","grim","dun"
+    ],
+    "femaleEndings": [
+      "a","ra","en","in","raen","ina","ryn","ara","un","is"
+    ],
+    "lastNamePieces": {
+      "left": [
+        "High","Stone","Wind","Cliff","Peak","Frost","Storm","Gale","Cloud","Ridge",
+        "Iron","Rime","Sky","Howl","Echo"
+      ],
+      "right": [
+        "breaker","brow","watch","thane","ward","hammer","forged","born","caller",
+        "guard","seeker","spear","strider","grip","keep"
+      ]
+    },
+    "titles": [
+      "the Wind-hewn",
+      "the Cliffborn",
+      "the Ridgewalker",
+      "of the Upper Peaks",
+      "Sky-warden",
+      "Stormsinger",
+      "of Frosthall",
+      "Windkeeper",
+      "the Echoed"
+    ],
+    "titlePieces": {
+      "left": [
+        "Wind","Cliff","Storm","Sky","Peak","Frost","Stone"
+      ],
+      "right": [
+        "hewn","born","ward","breaker","walker","thane","bound"
+      ],
+      "comboWeight": 0.5
+    },
+    "patterns": [
+      "CVC","CVCC","CVVC","SCVC","CVCCV","SVCV","CVVCV","CVCCVC","SCVCC","CVCVC"
+    ]
+  }
 
 }

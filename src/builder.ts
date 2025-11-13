@@ -8,7 +8,7 @@ import { withinBudget, LIMITS_BY_FORMAT, type Limits } from "./limits.js";
 import { isPronounceable } from "./pronunciation.js";
 import { makeTitle } from "./titles.js";
 
-export type Theme = "earth" | "sea" | "forge" | "mix";
+export type Theme = "earth" | "sea" | "forge" | "air" | "mix";
 export type Gender = "male" | "female";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
