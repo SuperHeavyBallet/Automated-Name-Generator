@@ -1,6 +1,7 @@
 import dwarfThemes from "./theme_pools/dwarf.json" with { type: "json" };
 import wizardThemes from "./theme_pools/wizard.json" with { type: "json" };
 import heroThemes from "./theme_pools/hero.json" with { type: "json" };
+export const THEMES = ["earth", "sea", "forge", "air", "mix"];
 function isNonEmptyStringArray(a) {
     return Array.isArray(a) && a.length > 0 && a.every(s => typeof s === "string");
 }
