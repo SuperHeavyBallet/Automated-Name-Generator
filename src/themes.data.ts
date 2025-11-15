@@ -3,9 +3,12 @@ import type { NonEmptyArray } from "./util.js";
 import dwarfThemes from "./theme_pools/dwarf.json" with { type: "json" };
 import wizardThemes from "./theme_pools/wizard.json" with { type: "json" };
 import heroThemes from "./theme_pools/hero.json" with { type: "json"};
+import elfThemes from "./theme_pools/elf.json" with { type: "json"};
 
-export const THEMES = ["earth", "sea", "forge", "air", "mix"] as const;
+export const THEMES = ["earth", "water", "fire", "air", "mix"] as const;
 export type Theme = (typeof THEMES)[number];
+export const GENDERS = ["male", "female", "other"] as const;
+export type Gender = (typeof GENDERS)[number];
 
 
 function isNonEmptyStringArray(a: unknown): a is NonEmptyArray<string> {
@@ -54,7 +57,7 @@ if (comboWeight !== undefined && typeof comboWeight !== "number") throw new Erro
   return newThemePool;
 }
 
-const dwarfEath = dwarfThemes.EARTH;
+
 
 const dwarfEarthPool = makeThemePool(dwarfThemes.EARTH);
 const dwarfWaterPool = makeThemePool(dwarfThemes.WATER);
@@ -65,6 +68,12 @@ const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWate
 const wizardEarthPool = makeThemePool(wizardThemes.EARTH);
 
 const heroEarthPool = makeThemePool(heroThemes.EARTH);
+
+const elfEarthPool = makeThemePool(elfThemes.EARTH);
+const elfFirePool = makeThemePool(elfThemes.FIRE);
+const elfWaterPool = makeThemePool(elfThemes.WATER);
+const elfAirPool = makeThemePool(elfThemes.AIR);
+const elfMixedPool = makeThemePool(buildBlendedPool([elfEarthPool, elfFirePool, elfWaterPool, elfAirPool]));
 
 
 export type themePool = {
@@ -97,8 +106,8 @@ export function getThemePool(theme: string, race : string)
 
     switch(theme){
       case "earth" : return dwarfEarthPool;
-      case "sea" : return dwarfWaterPool;
-      case "forge" : return dwarfFirePool;
+      case "water" : return dwarfWaterPool;
+      case "fire" : return dwarfFirePool;
       case "air" : return dwarfAirPool;
       case "mix" : return dwarfMixedPool;
     }
@@ -107,6 +116,16 @@ export function getThemePool(theme: string, race : string)
   {
     return heroEarthPool;
 
+  }
+  else if(race == "Elf")
+  {
+    switch(theme){
+      case "earth" : return elfEarthPool;
+      case "water" : return elfWaterPool;
+      case "fire" : return elfFirePool;
+      case "air" : return elfAirPool;
+      case "mix" : return elfMixedPool;
+    }
   }
   else{
     return wizardEarthPool;

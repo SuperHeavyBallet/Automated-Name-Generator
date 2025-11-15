@@ -5,8 +5,7 @@ import type { Limits } from "./limits.js";
 import { withinBudget } from "./limits.js";
 import { insertVowelBreaks, withLinkingVowel } from "./vowels.js";
 
-
-export type Gender = "male" | "female";
+import type { Gender } from "./themes.data.js";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
 type Pools = themePool;

@@ -1,0 +1,290 @@
+{
+    "EARTH": {
+  "consonants": [
+    "b","d","f","h","l","m","n","r","s","t","v","w","y"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ea","ia","ie","ei","ui","oa"
+  ],
+  "clustersStart": [
+    "th","sh","ph","lh","rh","ny","ly","my","sy",
+    "fl","fr","gl","gr","hl"
+  ],
+  "clustersEnd": [
+    "th","sh","ph","nd","nn","ll","ss","st","nt","rd",
+    "lth","rth","neth","riel"
+  ],
+  "maleEndings": [
+    "ion","ian","ir","or","as","eth","arin","endir","hael","dil","rion","thor"
+  ],
+  "femaleEndings": [
+    "iel","ia","ien","wen","wyn","eth","elle","ara","enya","lith","uin","ieth"
+  ],
+  "lastNamePieces": {
+    "left": [
+      "Leaf","Grove","Willow","Elm","Birch","Rowan","Ash","Hazel","Yew","Cedar",
+      "Thorn","Briar","Vine","Ivy","Fern","Root","Moss","Lichen","Thicket","Glen",
+      "Silver","Gold","Bronze","Verdant","Emerald","Jade","Crystal","Opal","Amber","Quartz",
+      "Moon","Star","Sun","Dawn","Dusk","Twilight","Gloam","Eclipse","Sky","Cloud",
+      "Song","Whisper","Echo","Dream","Glimmer","Glow","Shade","Veil","Drift","Haze",
+      "River","Brook","Stream","Spring","Pool","Lake","Vale","Hollow","Dell","Meadow",
+      "Hill","Ridge","Tor","Crag","Cairn","Barrow","Roots","Deepwood","Greenwood","Wildwood",
+      "Softstep","Lightfoot","Farwind","Softwind","Stillbough","Highbough"
+    ],
+    "right": [
+      "song","whisper","runner","watcher","ward","walker","wander","seeker","searcher","warden",
+      "weaver","binder","singer","speaker","caller","herald","keeper","tender","warden","guardian",
+      "leaf","bough","bark","root","thorn","bloom","petal","seed","moss","shade","glen","vale","field",
+      "branch","grove","wood","heart","soul","vein","glow","ember","ray","gleam",
+      "dancer","rider","strider","stalker","tracker","pathfinder","wayfarer","dweller","delver",
+      "born","blood","kin","folk","child","spawn","song","dreamer","seer","watch","ward",
+      "star","moon","dawn","dusk","light","shadow","wisp","gleam","spark","shimmer"
+    ]
+  },
+  "titles": [
+    "the Greenbough","the Leafborn","the Mossvein","the Rootbound",
+    "the Grove Warden","the Wildwalker","the Hill-singer","the Glenwatch",
+    "the Moonbloom","the Star-sung","the Dawncaller","the Duskwalker",
+    "the Dreambound","the Softstep","the Farstrider","the Stillbough",
+    "the River-eyed","the Mistwoven","the Thornwise","the Briarward",
+    "the Quiet Grove","the Deepwood Seer","the Emberleaf","the Shade-veiled",
+    "the Rootspeaker","the Meadowwatch","the Hollow-kin","the Windward",
+    "the Evergreen","the Oldroot","the Last Bough","the First Leaf"
+  ],
+  "titlePieces": {
+    "left": [
+      "Leaf","Bough","Branch","Root","Seed","Bloom","Petal","Thorn","Briar","Vine","Ivy","Fern",
+      "Moss","Lichen","Grove","Wood","Copse","Thicket","Glade","Glen","Vale","Meadow","Field",
+      "Hill","Tor","Ridge","Cairn","Barrow","Hollow","Dell","Spring","Brook","River","Falls",
+      "Moon","Star","Sun","Dawn","Dusk","Twilight","Gloam","Shadow","Light","Wisp","Echo","Dream",
+      "Song","Whisper","Glimmer","Gleam","Spark","Flame","Ember","Mist","Fog","Haze",
+      "Silver","Golden","Verdant","Emerald","Jade","Crystal","Opal","Amber",
+      "Soft","Still","High","Low","Old","Ancient","Hidden","Wandering","Silent"
+    ],
+    "right": [
+      "singer","seer","speaker","caller","whisper","song","dreamer","watcher","keeper","warden",
+      "walker","wander","runner","strider","stalker","tracker","pathfinder","wayfarer","dweller","delver",
+      "binder","weaver","shaper","tender","guardian","minder",
+      "heart","soul","vein","bloom","thorn","root","bark","branch","moss","shade","veil","glow",
+      "light","shadow","spark","ember","gleam","wisp","echo",
+      "hand","foot","eye","voice","tongue","crown","mantle","brand","mark",
+      "born","bound","blood","child","kin","folk","saint","elder"
+    ],
+    "comboWeight": 0.7
+  },
+  "patterns": [
+    "CVCV","CVVC","SCVC","CVCVC","SCV","SCVCV","CVCVE","CVCEC"
+  ]
+},
+"FIRE": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","r","s","t","v","z",
+    "c","x" 
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ia","ei","ao","ua","oi"
+  ],
+  "clustersStart": [
+    "fl","fr","kr","gr","br","dr","str","sk","sc","sz","sm",
+    "th","sh","kh","fyr","fyrh","py"
+  ],
+  "clustersEnd": [
+    "th","sh","sk","sz","x","zx","rk","rg","rd","rn","st","lt",
+    "rath","zeth","nir","vyr"
+  ],
+  "maleEndings": [
+    "ar","as","or","os","ir","ion","rak","zar","vyr","rax","drin","thor","kez","skar"
+  ],
+  "femaleEndings": [
+    "a","ia","ira","ara","ysa","eth","yra","aza","yn","irael","asha","ezra"
+  ],
+  "lastNamePieces": {
+    "left": [
+      "Flame","Blaze","Spark","Cinder","Ash","Ember","Pyre","Inferno","Scorch","Fury",
+      "Coal","Char","Smoke","Soot","Glow","Flare","Torch","Burn","Sear","Heat",
+      "Sun","Dawn","Duskfire","Glimmer","Frostfire","Starfire","Rune","Molten","Crackle","Kindle",
+      "Iron","Steel","Bronze","Obsidian","Glass","Magma","Lavastone",
+      "Red","Crimson","Scarlet","Sanguine","Bright","Dread","Wild","Rage","Storm",
+      "Highflame","Lowember","Nightfire","Daybrand","Firefall","Hotwind","Ashen","Brim"
+    ],
+    "right": [
+      "brand","born","blood","kin","bane","fury","heart","song","vein","spark","flare","fire",
+      "keeper","binder","warden","watcher","seeker","stalker","rider","runner","hunter","breaker",
+      "smith","forger","maker","wrought","shaper","carver","molder","caster","melder",
+      "ember","cinder","ash","char","smoke","spark","glow","kindle","flame",
+      "fang","claw","horn","shield","blade","spear","strike","lash","rend","sear",
+      "dancer","walker","wander","strider","pathfinder","outwalker","skyflame","sunward","hearthward"
+    ]
+  },
+  "titles": [
+    "the Fire-forged","the Emberborn","the Ash-veined","the Cindersworn","the Dawn-forged",
+    "the Flamecaller","the Pyre-ward","the Red-Handed","the Sunbrand","the Bloodflame",
+    "the Bright Rage","the Infernal","the Ember Seer","the Heatwalker","the Smoke-Taker",
+    "the Cinder-King","the Ash-Queen","the Glow-sworn","the Warbrand","the Burned",
+    "the Steel-Sung","the Coal-Hearted","the Ironflame","the Moltenborn",
+    "the Night-Fury","the Star-Forge","the Flame-Singer","the Sear-Tamer","the Thorn-of-Fire"
+  ],
+  "titlePieces": {
+    "left": [
+      "Flame","Blaze","Spark","Ash","Ember","Cinder","Char","Smoke","Glow","Heat",
+      "Sun","Moon","Star","Dawn","Dusk","Fire","Pyre","Burn","Sear","Fury","Wrath",
+      "Iron","Steel","Bronze","Coal","Glass","Forge","Hammer","Anvil","Brand","Scorch",
+      "Blood","Bone","Horn","Fang","Talon","Blade","Spear","Shield",
+      "Red","Bright","Crimson","Shattered","Molten","Riven","Scarred","Rage","Wild","Silent",
+      "High","Low","Ancient","Lost","Broken","First","Last"
+    ],
+    "right": [
+      "singer","caller","speaker","seeker","keeper","warden","watcher","brand","bloom","burner",
+      "shaper","forger","smith","carver","wrought","mender","binder","walker","strider",
+      "heart","blood","vein","soul","spark","flare","ember","shadow","light","veil",
+      "fang","claw","blade","spear","strike","lash","breaker","sunder",
+      "born","bound","kin","folk","saint","elder","lord","queen","king"
+    ],
+    "comboWeight": 0.6
+  },
+  "patterns": [
+    "CVCV","SCVC","CVCVC","SCV","SVCE","CVCVE","CVVC","SCVCV"
+  ]
+},
+"AIR": {
+  "consonants": [
+    "h","l","m","n","r","s","t","v","w","y",
+    "f","th","sh"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ia","ie","ea","uo","ai","ui","oe"
+  ],
+  "clustersStart": [
+    "wh","sh","th","hl","lh","hr","rh","sw","sl","sy","ly",
+    "fae","vae","sha","thea","air"
+  ],
+  "clustersEnd": [
+    "th","sh","ss","syl","lith","neth","reth","riel","wyn","mir","ael","hail"
+  ],
+  "maleEndings": [
+    "ar","ir","or","ion","ean","ael","ath","ien","ryth","var","hael","thor"
+  ],
+  "femaleEndings": [
+    "a","ia","iel","ien","ira","wyn","wyra","aera","ala","iara","essa"
+  ],
+  "lastNamePieces": {
+    "left": [
+      "Sky","Cloud","Wind","Breeze","Gale","Haze","Mist","Drift","Whirl","Zephyr",
+      "Star","Moon","Sun","Dawn","Dusk","Twilight","Glimmer","Halo","Nimbus","Echo",
+      "Wing","Feather","Glide","Soar","Lift","Air","Whisper","Spire","Song","Wisp",
+      "High","Low","Bright","Pale","Silver","White","Azure","Cobalt","Amethyst","Crystal",
+      "Aurora","Glim","Shine","Glow","Rime","Frost","Snow","Shear","Slip","Tide",
+      "Updraft","Skytide","Stillwind","Starglare","Bluefall","Airstep","Peak","Skyvale",
+      "Storm","Tempest","Ripple","Plume"
+    ],
+    "right": [
+      "whisper","song","gleam","glide","wing","feather","bright","caller","seeker","weaver",
+      "watcher","warden","wander","walker","strider","runner","soarer","glider","drifter","singer",
+      "shaper","binder","mender","wrought","fader","vanisher","dancer","spinner",
+      "dreamer","seer","vision","flare","spark","shade","veil","shimmer","echo","glow",
+      "kin","born","folk","child","heart","soul","mind","gaze","dawn","dusk","wind","air"
+    ]
+  },
+  "titles": [
+    "the Wind-touched","the Cloudborn","the Skydreamer","the Whispered","the Gale-sung",
+    "the Lightrider","the Mist-veiled","the Dawn-walker","the Dusk-seer","the Featherlight",
+    "the Star-lean","the Moon-glade","the Airstepper","the Zephyr-soul","the Highborne",
+    "the Tempest-blessed","the Lightwrought","the Cloud-seer","the Pale-gleam",
+    "the Wind-wander","the Horizon-kin","the Ever-soaring","the Sunveil","the Skyforged",
+    "the Haze-singer","the Storm-called","the Drift-bound","the Silent Gale","the Whisper-bloom"
+  ],
+  "titlePieces": {
+    "left": [
+      "Sky","Cloud","Wind","Breeze","Gale","Zephyr","Mist","Haze","Drift","Wisp",
+      "Star","Moon","Sun","Dawn","Dusk","Glow","Glimmer","Halo","Shear","Rime","Snow",
+      "Feather","Wing","Soar","Glide","Spire","Peak","Summit","High","Bright","Pale",
+      "Silver","White","Azure","Crystal","Echo","Dream","Light","Air","Storm","Horizon",
+      "Silent","Swift","Wakened","Ancient","Vast","Soft","Still"
+    ],
+    "right": [
+      "singer","caller","dreamer","weaver","watcher","warden","seer","speaker","herald","wander",
+      "walker","runner","strider","fader","vanisher","shaper","binder","gazer","keeper",
+      "wing","flare","spark","shade","veil","echo","gleam","shine","haze","mender",
+      "born","bound","kin","child","folk","spirit","soul","heart","voice","mind"
+    ],
+    "comboWeight": 0.8
+  },
+  "patterns": [
+    "CVCV","CVVC","SCV","SCVC","CVCVC","SVCE","SCVCV","CVCVE"
+  ]
+},
+"WATER": {
+  "consonants": [
+    "b","d","f","g","h","l","m","n","r","s","t","v","w","y",
+    "sh","th"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ea","ia","io","ua","oe","ou","ui"
+  ],
+  "clustersStart": [
+    "sh","th","sw","sl","sm","sn","wh","wr","gl","gr","bl","br",
+    "dra","dro","sla","sho","sea","mar","aqua"
+  ],
+  "clustersEnd": [
+    "th","sh","ss","st","nd","rn","rl","rr","lth","rith","neth","sail","wave","wyn"
+  ],
+  "maleEndings": [
+    "ar","or","ir","as","ios","en","on","ath","mar","rion","thor","vash","dren","sail"
+  ],
+  "femaleEndings": [
+    "a","ia","ela","ena","ira","ora","essa","wen","wyn","eia","asha","mira","lua"
+  ],
+  "lastNamePieces": {
+    "left": [
+      "Wave","Tide","Sea","Ocean","Storm","Gale","Wind","Spray","Salt","Foam",
+      "Reef","Coral","Shell","Scale","Fin","Current","Drift","Deep","Blue","Azure",
+      "Mist","Haze","Fog","Gloom","Glimmer","Pearl","Opal","Siren","Mariner","Reaver",
+      "Squall","Breaker","Riptide","Undertow","Crest","Surge","Flood","River","Brook",
+      "Harbor","Coast","Cliff","Rock","Cove","Bay","Shore","Spine","Spire","Anchor",
+      "Glass","Silver","Moon","Star","Gull","Kelp","Weed","Oar","Sail","Compass"
+    ],
+    "right": [
+      "walker","singer","caller","weaver","watcher","seeker","runner","sailor","reaver","diver",
+      "warden","keeper","tider","breaker","binder","seafarer","pathfinder","wayfarer","mariner","raider",
+      "fin","scale","shell","shade","gleam","drift","wave","foam","spray","mist","gale","wind",
+      "heart","soul","blood","kin","born","folk","child","hand","helm","oath",
+      "blade","lash","strike","fang","claw","storm","surge","echo","shine","crest"
+    ]
+  },
+  "titles": [
+    "the Tide-walker","the Sea-born","the Storm-forged","the Salt-tongued","the Deep-sung",
+    "the Wave-rider","the Foam-wreathed","the Crest-splitter","the Blue-sighted","the Driftbound",
+    "the Anchor-breaker","the Reef-singer","the Mist-veiled","the Gale-sworn","the Siren-hearted",
+    "the Ocean’s Echo","the Storm-called","the Brine-marked","the Silvercrest","the Shell-veined",
+    "the Drowned King","the Tide Queen","the Oar-watcher","the Sky-sailer",
+    "the Tempestbound","the Sea-keeper","the Undercurrent","the Frostwater","the Whispered Surf"
+  ],
+  "titlePieces": {
+    "left": [
+      "Wave","Tide","Sea","Ocean","Storm","Squall","Gale","Spray","Foam","Salt",
+      "Drift","Deep","Blue","Azure","Pearl","Siren","Coral","Reef","Shell","Scale",
+      "Wind","Mist","Fog","Haze","Rime","Frost","Breaker","Crest","Flood","Cove","Harbor","Shore",
+      "Anchor","Sail","Oar","Compass","Star","Moon","Glimmer","Current","Channel","Brook","River",
+      "Silent","Lost","Wandering","Ancient","Bright","Pale","Silver","Dark"
+    ],
+    "right": [
+      "walker","singer","caller","weaver","watcher","seer","wander","strider","runner","sailer",
+      "rider","reaver","diver","caster","binder","keeper","warden","mender","shaper",
+      "fin","scale","shell","drift","foam","spray","crest","gleam","echo","shine","veil",
+      "heart","soul","blood","kin","born","child","folk","voice","spirit","helm","mark"
+    ],
+    "comboWeight": 0.65
+  },
+  "patterns": [
+    "CVCV","CVVC","SCV","SCVC","CVCVC","SVCE","SCVCV","CVCVE"
+  ]
+}
+
+
+
+
+}

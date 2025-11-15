@@ -2,7 +2,8 @@ import { makeRNG } from "./rng.js";
 import { buildName } from "./builder.js";
 import type { Theme } from "./themes.data.js";
 
-export type Gender = "male" | "female";
+import type { Gender } from "./themes.data.js";
+//export type Gender = "male" | "female" | "other";
 export type Format = "single" | "single+last" | "single+title" | "random";
 
 

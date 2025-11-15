@@ -1,6 +1,8 @@
 import type { NonEmptyArray } from "./util.js";
-export declare const THEMES: readonly ["earth", "sea", "forge", "air", "mix"];
+export declare const THEMES: readonly ["earth", "water", "fire", "air", "mix"];
 export type Theme = (typeof THEMES)[number];
+export declare const GENDERS: readonly ["male", "female", "other"];
+export type Gender = (typeof GENDERS)[number];
 export type themePool = {
     consonants: NonEmptyArray<string>;
     vowels: NonEmptyArray<string>;
