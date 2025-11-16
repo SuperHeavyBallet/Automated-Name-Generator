@@ -57,6 +57,10 @@ const dwarfFirePool = makeThemePool(dwarfThemes.FIRE);
 const dwarfAirPool = makeThemePool(dwarfThemes.AIR);
 const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWaterPool, dwarfFirePool, dwarfAirPool]));
 const wizardEarthPool = makeThemePool(wizardThemes.EARTH);
+const wizardWaterPool = makeThemePool(wizardThemes.WATER);
+const wizardFirePool = makeThemePool(wizardThemes.FIRE);
+const wizardAirPool = makeThemePool(wizardThemes.AIR);
+const wizardMixedPool = makeThemePool(buildBlendedPool([wizardEarthPool, wizardWaterPool, wizardFirePool, wizardAirPool]));
 const heroEarthPool = makeThemePool(heroThemes.EARTH);
 const elfEarthPool = makeThemePool(elfThemes.EARTH);
 const elfFirePool = makeThemePool(elfThemes.FIRE);
@@ -83,6 +87,15 @@ export function getThemePool(theme, race) {
             case "fire": return elfFirePool;
             case "air": return elfAirPool;
             case "mix": return elfMixedPool;
+        }
+    }
+    else if (race == "Wizard") {
+        switch (theme) {
+            case "earth": return wizardEarthPool;
+            case "water": return wizardWaterPool;
+            case "fire": return wizardFirePool;
+            case "air": return wizardAirPool;
+            case "mix": return wizardMixedPool;
         }
     }
     else {
