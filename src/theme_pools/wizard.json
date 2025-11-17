@@ -208,7 +208,7 @@
     "comboWeight": 0.5
   },
   "patterns": [
-    "CVC","CVCC","SCV","CVCV","CVCVC","SCVC","SCVCV","CVCEC"
+    "CVC","CVC","SCV","CVCV","CVCVC","SCVC","SCVCV","CVCEC"
   ]
 },
 "AIR" : {
@@ -270,11 +270,11 @@
     "comboWeight": 0.5
   },
   "patterns": [
-    "CVC","CVCC","SCV","CVCV","CVCVC","SCVC","SCVCV","CVCEC"
+    "CVC","CVC","SCV","CVCV","CVCVC","SCVC","SCVCV","CVCEC"
   ]
 },
 "FIRE" : {
-  "consonants" : ["b","d","f","g","h","k","l","m","n","r","s","t","v","z","x"],
+  "consonants" : ["b","d","f","g","h","k","l","m","n","r","s","t","v","z"],
   "vowels" : ["a","e","i","o","u","ae","ia","ei","ao","ui"],
   "clustersStart": [
     "br","dr","gr","kr","str","sc","sk","fl","fr","gl","sm","sr",
@@ -285,10 +285,10 @@
     "rax","vyr","zar","keth"
   ],
   "maleEndings": [
-    "ar","or","ir","as","ion","rak","zar","vyr","dren","thor","kaz","drin","rax"
+    "ar","or","ir","as","ion","rak","zar","vyr","dren","thor","kaz","drin","rax", "lak", "khar", "hek"
   ],
   "femaleEndings": [
-    "a","ia","ira","ara","ysa","eth","ella","irae","aza","asha","yra","ezra"
+    "a","ia","ira","ara","ysa","eth","ella","irae","aza","asha","yra","ezra", "kyra", "hes"
   ],
   "lastNamePieces": {
     "left": [
@@ -334,7 +334,7 @@
     "comboWeight": 0.5
   },
   "patterns": [
-    "CVC","CVCC","SCV","CVCV","CVCVC","SCVC","SCVCV","CVCEC"
+    "CVC","CVC","SCV","CVCV","CVCVC","SCVC","SCVCV","CVCEC"
   ]
 }
 

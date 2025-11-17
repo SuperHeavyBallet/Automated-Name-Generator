@@ -2,6 +2,14 @@
 
 # Current Known Errors
 
+New Mild Bug
+
+## ! FIXED - remove CVCC Pattern from Theme Object - likely also remove from others, potentially introduce a new rule for 'legal consonent chains' or special consonents
+
+In WIzard (and likely others) first names sometimes end slightly 'off' Lotb, Ritf etc, with a consonent end but preceded by a consonent, rather than a vowel.
+
+This IS technically possible, especially for older, harsher sounding names, but it would likely be much smoother to force named ending with a Consonent to have a Vowel placed before it, rather than Consonent - Consonent (V,C rather than C,C).
+
 ## ! FIXED - remove Linking Vowels from Last Name Builder (builder.ts > makeLastName())
 
 In Last name, ending the first half with a consonant sometimes/often results in an extra vowel being added, ending in a vowel does not
