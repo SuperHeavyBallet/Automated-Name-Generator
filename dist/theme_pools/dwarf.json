@@ -101,7 +101,7 @@
             "comboWeight": 0.5
         },
         "patterns": [
-            "CVC", "CVCC", "SCV", "CVCV", "CVCVC", "SCVC", "SCVCV", "CVCEC"
+            "CVC", "SCV", "CVCV", "CVCVC", "SCVC", "SCVCV", "CVCEC"
         ]
     },
     "WATER": {
@@ -269,7 +269,7 @@
             "comboWeight": 0.5
         },
         "patterns": [
-            "CVC", "CVCC", "SCVC", "CVCV", "SVC", "CVVC", "SCVCV", "CVCEC", "CVCCV", "SVCC"
+            "CVC", "SCVC", "CVCV", "SVC", "CVVC", "SCVCV", "CVCEC", "CVCCV", "SVCC"
         ]
     },
     "AIR": {
@@ -323,7 +323,7 @@
             "comboWeight": 0.5
         },
         "patterns": [
-            "CVC", "CVCC", "CVVC", "SCVC", "CVCCV", "SVCV", "CVVCV", "CVCCVC", "SCVCC", "CVCVC"
+            "CVC", "CVVC", "SCVC", "CVCCV", "SVCV", "CVVCV", "CVCCVC", "SCVCC", "CVCVC"
         ]
     }
 }
