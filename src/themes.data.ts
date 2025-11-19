@@ -4,6 +4,7 @@ import dwarfThemes from "./theme_pools/dwarf.json" with { type: "json" };
 import wizardThemes from "./theme_pools/wizard.json" with { type: "json" };
 import heroThemes from "./theme_pools/hero.json" with { type: "json"};
 import elfThemes from "./theme_pools/elf.json" with { type: "json"};
+import darkElfThemes from "./theme_pools/dark_elf.json" with { type: "json"};
 
 export const THEMES = ["earth", "water", "fire", "air", "mix"] as const;
 export type Theme = (typeof THEMES)[number];
@@ -79,6 +80,12 @@ const elfWaterPool = makeThemePool(elfThemes.WATER);
 const elfAirPool = makeThemePool(elfThemes.AIR);
 const elfMixedPool = makeThemePool(buildBlendedPool([elfEarthPool, elfFirePool, elfWaterPool, elfAirPool]));
 
+const darkElfEarthPool = makeThemePool(darkElfThemes.EARTH);
+const darkElfFirePool = makeThemePool(darkElfThemes.FIRE);
+const darkElfWaterPool = makeThemePool(darkElfThemes.WATER);
+const darkElfAirPool = makeThemePool(darkElfThemes.AIR);
+const darkElfMixedPool = makeThemePool(buildBlendedPool([darkElfEarthPool, darkElfFirePool, darkElfWaterPool, darkElfAirPool]));
+
 
 export type themePool = {
     consonants: NonEmptyArray<string>;
@@ -103,6 +110,7 @@ export type themePool = {
 export function getThemePool(theme: string, race : string)
 {
 
+  console.log(race);
 
   if(race === "Dwarf")
   {
@@ -129,6 +137,17 @@ export function getThemePool(theme: string, race : string)
       case "fire" : return elfFirePool;
       case "air" : return elfAirPool;
       case "mix" : return elfMixedPool;
+    }
+  }
+  else if(race == "Dark Elf")
+  {
+    switch(theme)
+    {
+      case "earth" : return darkElfEarthPool;
+      case "water" : return darkElfWaterPool;
+      case "fire" : return darkElfFirePool;
+      case "air" : return darkElfAirPool;
+      case "mix" : return darkElfMixedPool;
     }
   }
   else if(race == "Wizard")
