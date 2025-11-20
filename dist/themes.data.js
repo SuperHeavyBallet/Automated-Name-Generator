@@ -3,6 +3,8 @@ import wizardThemes from "./theme_pools/wizard.json" with { type: "json" };
 import heroThemes from "./theme_pools/hero.json" with { type: "json" };
 import elfThemes from "./theme_pools/elf.json" with { type: "json" };
 import darkElfThemes from "./theme_pools/dark_elf.json" with { type: "json" };
+import smallCreatureThemes from "./theme_pools/small_creature.json" with { type: "json" };
+import { returnThemeSet } from "./theme_pools/theme_pool_generator.js";
 export const THEMES = ["earth", "water", "fire", "air", "mix"];
 export const GENDERS = ["male", "female", "other"];
 function isNonEmptyStringArray(a) {
@@ -52,70 +54,28 @@ function makeThemePool(json) {
     };
     return newThemePool;
 }
-const dwarfEarthPool = makeThemePool(dwarfThemes.EARTH);
-const dwarfWaterPool = makeThemePool(dwarfThemes.WATER);
-const dwarfFirePool = makeThemePool(dwarfThemes.FIRE);
-const dwarfAirPool = makeThemePool(dwarfThemes.AIR);
-const dwarfMixedPool = makeThemePool(buildBlendedPool([dwarfEarthPool, dwarfWaterPool, dwarfFirePool, dwarfAirPool]));
-const wizardEarthPool = makeThemePool(wizardThemes.EARTH);
-const wizardWaterPool = makeThemePool(wizardThemes.WATER);
-const wizardFirePool = makeThemePool(wizardThemes.FIRE);
-const wizardAirPool = makeThemePool(wizardThemes.AIR);
-const wizardMixedPool = makeThemePool(buildBlendedPool([wizardEarthPool, wizardWaterPool, wizardFirePool, wizardAirPool]));
-const heroEarthPool = makeThemePool(heroThemes.EARTH);
-const elfEarthPool = makeThemePool(elfThemes.EARTH);
-const elfFirePool = makeThemePool(elfThemes.FIRE);
-const elfWaterPool = makeThemePool(elfThemes.WATER);
-const elfAirPool = makeThemePool(elfThemes.AIR);
-const elfMixedPool = makeThemePool(buildBlendedPool([elfEarthPool, elfFirePool, elfWaterPool, elfAirPool]));
-const darkElfEarthPool = makeThemePool(darkElfThemes.EARTH);
-const darkElfFirePool = makeThemePool(darkElfThemes.FIRE);
-const darkElfWaterPool = makeThemePool(darkElfThemes.WATER);
-const darkElfAirPool = makeThemePool(darkElfThemes.AIR);
-const darkElfMixedPool = makeThemePool(buildBlendedPool([darkElfEarthPool, darkElfFirePool, darkElfWaterPool, darkElfAirPool]));
 export function getThemePool(theme, race) {
     console.log(race);
+    const testTheme = returnThemeSet(dwarfThemes, theme);
+    console.log(testTheme);
     if (race === "Dwarf") {
-        switch (theme) {
-            case "earth": return dwarfEarthPool;
-            case "water": return dwarfWaterPool;
-            case "fire": return dwarfFirePool;
-            case "air": return dwarfAirPool;
-            case "mix": return dwarfMixedPool;
-        }
+        return returnThemeSet(dwarfThemes, theme);
     }
     else if (race === "Hero") {
-        return heroEarthPool;
+        return returnThemeSet(heroThemes, theme);
     }
     else if (race == "Elf") {
-        switch (theme) {
-            case "earth": return elfEarthPool;
-            case "water": return elfWaterPool;
-            case "fire": return elfFirePool;
-            case "air": return elfAirPool;
-            case "mix": return elfMixedPool;
-        }
+        return returnThemeSet(elfThemes, theme);
     }
     else if (race == "Dark Elf") {
-        switch (theme) {
-            case "earth": return darkElfEarthPool;
-            case "water": return darkElfWaterPool;
-            case "fire": return darkElfFirePool;
-            case "air": return darkElfAirPool;
-            case "mix": return darkElfMixedPool;
-        }
+        return returnThemeSet(darkElfThemes, theme);
     }
     else if (race == "Wizard") {
-        switch (theme) {
-            case "earth": return wizardEarthPool;
-            case "water": return wizardWaterPool;
-            case "fire": return wizardFirePool;
-            case "air": return wizardAirPool;
-            case "mix": return wizardMixedPool;
-        }
+        return returnThemeSet(wizardThemes, theme);
     }
     else {
-        return wizardEarthPool;
+        return returnThemeSet(dwarfThemes, theme);
+        ;
     }
 }
 function buildBlendedPool(themePoolsToBlend) {

@@ -22,6 +22,6 @@ export type themePool = {
     };
     patterns: NonEmptyArray<string>;
 };
-export declare function getThemePool(theme: string, race: string): themePool | undefined;
+export declare function getThemePool(theme: string, race: string): themePool;
 export declare const WIZARD: themePool;
 //# sourceMappingURL=themes.data.d.ts.map

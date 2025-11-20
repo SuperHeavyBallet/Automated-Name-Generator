@@ -1,10 +1,13 @@
 import type { NonEmptyArray } from "./util.js";
 
+
 import dwarfThemes from "./theme_pools/dwarf.json" with { type: "json" };
 import wizardThemes from "./theme_pools/wizard.json" with { type: "json" };
 import heroThemes from "./theme_pools/hero.json" with { type: "json"};
 import elfThemes from "./theme_pools/elf.json" with { type: "json"};
 import darkElfThemes from "./theme_pools/dark_elf.json" with { type: "json"};
+import smallCreatureThemes from "./theme_pools/small_creature.json" with {type: "json"};
+import { returnThemeSet } from "./theme_pools/theme_pool_generator.js";
 
 export const THEMES = ["earth", "water", "fire", "air", "mix"] as const;
 export type Theme = (typeof THEMES)[number];
@@ -16,50 +19,52 @@ function isNonEmptyStringArray(a: unknown): a is NonEmptyArray<string> {
   return Array.isArray(a) && a.length > 0 && a.every(s => typeof s === "string");
 }
 
+
+
 function makeThemePool(json : unknown) : themePool
 {
 
-  if(typeof json !== "object" || json === null) throw new Error("Not an object");
-  const j = json as Record<string, unknown>;
+    if(typeof json !== "object" || json === null) throw new Error("Not an object");
+    const j = json as Record<string, unknown>;
 
 
-  const guard = (k: string) => {
-    if(!isNonEmptyStringArray(j[k])) throw new Error(`Invalid ${k}`);
-    return j[k] as NonEmptyArray<string>;
-  };
+    const guard = (k: string) => {
+      if(!isNonEmptyStringArray(j[k])) throw new Error(`Invalid ${k}`);
+      return j[k] as NonEmptyArray<string>;
+    };
 
-  const last = j.lastNamePieces as Record<string, unknown>;
-  if(typeof last !== "object" || last === null) throw new Error ("Invalid lastNamePieces");
-  const left = (last.left); const right = (last.right);
-  if (!isNonEmptyStringArray(left)) throw new Error("Invalid lastNamePieces.left");
-  if (!isNonEmptyStringArray(right)) throw new Error("Invalid lastNamePieces.right");
+    const last = j.lastNamePieces as Record<string, unknown>;
+    if(typeof last !== "object" || last === null) throw new Error ("Invalid lastNamePieces");
+    const left = (last.left); const right = (last.right);
+    if (!isNonEmptyStringArray(left)) throw new Error("Invalid lastNamePieces.left");
+    if (!isNonEmptyStringArray(right)) throw new Error("Invalid lastNamePieces.right");
 
-  const titlePieces = j.titlePieces as Record<string, unknown>;
-if (typeof titlePieces !== "object" || titlePieces === null) throw new Error("Invalid titlePieces");
-const tLeft = titlePieces.left; const tRight = titlePieces.right;
-if (!isNonEmptyStringArray(tLeft)) throw new Error("Invalid titlePieces.left");
-if (!isNonEmptyStringArray(tRight)) throw new Error("Invalid titlePieces.right");
-const comboWeight = titlePieces.comboWeight;
-if (comboWeight !== undefined && typeof comboWeight !== "number") throw new Error("Invalid comboWeight");
+    const titlePieces = j.titlePieces as Record<string, unknown>;
+    if (typeof titlePieces !== "object" || titlePieces === null) throw new Error("Invalid titlePieces");
+    const tLeft = titlePieces.left; const tRight = titlePieces.right;
+    if (!isNonEmptyStringArray(tLeft)) throw new Error("Invalid titlePieces.left");
+    if (!isNonEmptyStringArray(tRight)) throw new Error("Invalid titlePieces.right");
+    const comboWeight = titlePieces.comboWeight;
+    if (comboWeight !== undefined && typeof comboWeight !== "number") throw new Error("Invalid comboWeight");
 
 
-  const newThemePool : themePool = {
-    consonants: guard("consonants"),
-    vowels: guard("vowels"),
-    clustersStart: guard("clustersStart"),
-    clustersEnd: guard("clustersEnd"),
-    maleEndings: guard("maleEndings"),
-    femaleEndings: guard("femaleEndings"),
-    lastNamePieces: { left, right },
-    titles: guard("titles"),
-    titlePieces: { left: tLeft as NonEmptyArray<string>, right: tRight as NonEmptyArray<string>, comboWeight: comboWeight as number},
-    patterns: guard("patterns"),
-  }
-  return newThemePool;
+    const newThemePool : themePool = {
+      consonants: guard("consonants"),
+      vowels: guard("vowels"),
+      clustersStart: guard("clustersStart"),
+      clustersEnd: guard("clustersEnd"),
+      maleEndings: guard("maleEndings"),
+      femaleEndings: guard("femaleEndings"),
+      lastNamePieces: { left, right },
+      titles: guard("titles"),
+      titlePieces: { left: tLeft as NonEmptyArray<string>, right: tRight as NonEmptyArray<string>, comboWeight: comboWeight as number},
+      patterns: guard("patterns"),
+    }
+    return newThemePool;
 }
 
 
-
+/*
 const dwarfEarthPool = makeThemePool(dwarfThemes.EARTH);
 const dwarfWaterPool = makeThemePool(dwarfThemes.WATER);
 const dwarfFirePool = makeThemePool(dwarfThemes.FIRE);
@@ -78,14 +83,35 @@ const elfEarthPool = makeThemePool(elfThemes.EARTH);
 const elfFirePool = makeThemePool(elfThemes.FIRE);
 const elfWaterPool = makeThemePool(elfThemes.WATER);
 const elfAirPool = makeThemePool(elfThemes.AIR);
-const elfMixedPool = makeThemePool(buildBlendedPool([elfEarthPool, elfFirePool, elfWaterPool, elfAirPool]));
+//const elfMixedPool = makeThemePool(buildBlendedPool([elfEarthPool, elfFirePool, elfWaterPool, elfAirPool]));
 
 const darkElfEarthPool = makeThemePool(darkElfThemes.EARTH);
 const darkElfFirePool = makeThemePool(darkElfThemes.FIRE);
 const darkElfWaterPool = makeThemePool(darkElfThemes.WATER);
 const darkElfAirPool = makeThemePool(darkElfThemes.AIR);
-const darkElfMixedPool = makeThemePool(buildBlendedPool([darkElfEarthPool, darkElfFirePool, darkElfWaterPool, darkElfAirPool]));
+//const darkElfMixedPool = makeThemePool(buildBlendedPool([darkElfEarthPool, darkElfFirePool, darkElfWaterPool, darkElfAirPool]));
 
+const smallCreatureEarthPool = makeThemePool(smallCreatureThemes.EARTH);
+const smallCreatureWaterPool = makeThemePool(smallCreatureThemes.WATER);
+const smallCreatureAirPool = makeThemePool(smallCreatureThemes.AIR);
+const smallCreatureFirePool = makeThemePool(smallCreatureThemes.FIRE);
+const smallCreatureMixedPool = makeThemePool(buildBlendedPool([smallCreatureEarthPool, smallCreatureAirPool, smallCreatureWaterPool, smallCreatureFirePool]));
+*/
+
+/*
+const smallCreatureThemeSet = {
+  "earth" : smallCreatureEarthPool,
+  "air" : smallCreatureAirPool,
+  "water" : smallCreatureWaterPool,
+  "fire" : smallCreatureFirePool,
+  "mixed" : smallCreatureMixedPool
+}
+
+const allThemeSets = {
+  "dwarf" : smallCreatureThemeSet,
+  "wizard" : 
+}
+*/
 
 export type themePool = {
     consonants: NonEmptyArray<string>;
@@ -111,57 +137,32 @@ export function getThemePool(theme: string, race : string)
 {
 
   console.log(race);
+  const testTheme = returnThemeSet(dwarfThemes, theme);
+  console.log(testTheme);
 
   if(race === "Dwarf")
   {
-
-
-    switch(theme){
-      case "earth" : return dwarfEarthPool;
-      case "water" : return dwarfWaterPool;
-      case "fire" : return dwarfFirePool;
-      case "air" : return dwarfAirPool;
-      case "mix" : return dwarfMixedPool;
-    }
+    return returnThemeSet(dwarfThemes, theme);
   }
   else if(race === "Hero")
   {
-    return heroEarthPool;
+    return returnThemeSet(heroThemes, theme);
 
   }
   else if(race == "Elf")
   {
-    switch(theme){
-      case "earth" : return elfEarthPool;
-      case "water" : return elfWaterPool;
-      case "fire" : return elfFirePool;
-      case "air" : return elfAirPool;
-      case "mix" : return elfMixedPool;
-    }
+    return returnThemeSet(elfThemes, theme);
   }
   else if(race == "Dark Elf")
   {
-    switch(theme)
-    {
-      case "earth" : return darkElfEarthPool;
-      case "water" : return darkElfWaterPool;
-      case "fire" : return darkElfFirePool;
-      case "air" : return darkElfAirPool;
-      case "mix" : return darkElfMixedPool;
-    }
+    return returnThemeSet(darkElfThemes, theme);
   }
   else if(race == "Wizard")
     {
-      switch(theme){
-        case "earth" : return wizardEarthPool;
-        case "water" : return wizardWaterPool;
-        case "fire" : return wizardFirePool;
-        case "air" : return wizardAirPool;
-        case "mix" : return wizardMixedPool;
-      }
+      return returnThemeSet(wizardThemes, theme);
     }
   else{
-    return wizardEarthPool;
+    return returnThemeSet(dwarfThemes, theme);;
   }
 
   
@@ -256,6 +257,8 @@ function buildBlendedPool(themePoolsToBlend : NonEmptyArray<themePool>)
 
   return newBlendPool;
 }
+
+
 
 export const WIZARD: themePool = {
   consonants: [

@@ -1,0 +1,265 @@
+{
+    "EARTH": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","p","r","s","t","v","w","z",
+    "ch","gr","kr","sn","sm","tr","dr","br","gn"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "aa","eo","ia","uo","oi"
+  ],
+
+  "clustersStart": [
+    "sn","sm","gr","kr","br","dr","tr","gn","scr","sk","cl","gl","pl"
+  ],
+  "clustersEnd": [
+    "nk","nt","mp","lm","ld","rd","rt","rg","rn","sk","st","zz","sh"
+  ],
+
+  "maleEndings": [
+    "ik","ok","an","or","un","in","min","gik","drum","burr","orn"
+  ],
+  "femaleEndings": [
+    "a","ia","ina","ara","ula","una","sha","raen","mira","ona"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Pebble","Moss","Mud","Root","Burrow","Bracken","Thorn","Dirt",
+      "Fenn","Silt","Loam","Mire","Gravel","Clod","Tangle","Hollow",
+      "Stonespark","Mosswhisk","Twigfen","Mudflick","Grubroot","Snagtooth",
+      "Puddlecoat","Dustfur","Thicket","Hearthmoss","Crumblehill"
+    ],
+    "right": [
+      "scamper","nibble","twitch","snout","scratcher","digpaw","whisk",
+      "burrower","crumbler","flicker","gnawer","scurrier","softstep",
+      "rootling","rockhopper","mudwalker","thistlesnout","ferncoat"
+    ]
+  },
+
+  "titles": [
+    "the Burrow-Born","the Mossnibbler","the Tiny-Gnaw","the Dust-Creeper",
+    "the Softfoot","the Hollow-Watcher","the Little Grub-King",
+    "the Pebble-Vexer","the Root-Singer","the Leaf-Skitter",
+    "the Mud-Curious","the Silt-Whisk","the Tangle-Tail",
+    "the Hill-Minder","the Clod-Finder","the Squeak-Hider"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Moss","Root","Pebble","Twig","Burrow","Dust","Silt","Loam",
+      "Mire","Hollow","Fern","Tangle","Bramble","Clod","Grub",
+      "Hearth","Stone","Crumble","Hill","Gnaw","Squeak","Dirt"
+    ],
+    "right": [
+      "whisk","paw","step","nose","runner","chitter","keeper","watcher",
+      "crawler","fur","whisper","squeak","scamper","nester",
+      "minder","snout","hopper","burrower","crumbler"
+    ],
+    "comboWeight": 0.55
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","CVCVC","SCVC","SVCV","CVCEC"
+  ]
+},
+"AIR": {
+  "consonants": [
+    "f","h","k","l","m","n","r","s","t","v","w","y","z",
+    "sh","wh","fl","sl","sw","gl","ch","th"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ia","ei","ui","ou","uu","yo","eo"
+  ],
+
+  "clustersStart": [
+    "fl","sl","sw","wh","sh","th","gl","vl","fr","sk","yl","whr"
+  ],
+  "clustersEnd": [
+    "th","sh","ss","zz","st","sk","rf","lf","rn","rl","wh","sse"
+  ],
+
+  "maleEndings": [
+    "in","ir","el","en","ith","yr","an","ael","wyn","is","or"
+  ],
+  "femaleEndings": [
+    "a","ia","ela","ira","eia","aera","sha","yna","uith","ora"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Feather","Wind","Sky","Breeze","Whisper","Gust","Soar","Cloud",
+      "Drift","Flitter","Glimmer","Zephyr","Airstep","Bluewhisk",
+      "Softwing","Mist","Haze","Lightplume","Skytouch","Airshade",
+      "Flitwhisp","Dawnflock","Featherfen","Gossamer","Highling"
+    ],
+    "right": [
+      "flutter","wing","dust","whisper","whirr","skimmer","gleam",
+      "flitter","glidepaw","softstep","skyborn","air-mender",
+      "sighbreath","cloud-treader","hazefoot","mistskip",
+      "windscurry","featherling","flicker","whim-bite"
+    ]
+  },
+
+  "titles": [
+    "the Cloud-Skimmer","the Dawn-Whisper","the Softwing",
+    "the Sky-Nibbler","the Breeze-Caller","the Whim-Born",
+    "the High-Flutter","the Mist-Dancer","the Little Gale-Mage",
+    "the Drift-Sage","the Hush-Wing","the Air-Twitch",
+    "the Feather-Bright","the Zephyr-Keen","the Pale-Glider"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Wind","Sky","Feather","Cloud","Gust","Dawn","Haze","Mist",
+      "Whim","Soar","Flit","Gossamer","Light","Air","Breeze",
+      "Blue","Soft","High","Zephyr","Whisper"
+    ],
+    "right": [
+      "wing","glider","caller","dancer","treader","flutter",
+      "bound","seer","breath","wisp","skip","spinner",
+      "skimmer","drifter","whirl","veil","featherling"
+    ],
+    "comboWeight": 0.6
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","CVCVC","SCVC","SVCV","CVCEC"
+  ]
+}
+,
+"WATER": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","r","s","t","v","w","z",
+    "sl","gl","dr","cl","sw","sh","ch","wh","spr","spl"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "aa","oo","ua","io","eo","uu","oa","ae"
+  ],
+
+  "clustersStart": [
+    "sl","gl","cl","dr","sw","sh","spl","spr","wh","ch","glw","dro"
+  ],
+  "clustersEnd": [
+    "sh","ch","th","zz","ss","shk","sk","rk","rn","msh","rsh","gl"
+  ],
+
+  "maleEndings": [
+    "un","or","um","en","il","ol","ar","ash","ohr","uun","mir"
+  ],
+  "femaleEndings": [
+    "a","ia","ila","ora","una","asha","oona","ira","eia","ulla"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Brook","Ripple","Foam","Kelp","Coral","Reef","Brine","Drift",
+      "Tide","Shell","Pearl","Lagoon","Marsh","Silt","Brack",
+      "Wave","Mistpool","Mudbar","Saltfen","Shorebloom","Bubbleshard",
+      "Brinefeather","Waveroot","Kelpcoat","Seastitch","Oozecrest"
+    ],
+    "right": [
+      "wader","swimmer","drifter","gleam","bubblecoat","shellkeeper",
+      "brinesnout","fin-step","waveborn","tanglewhisk","rippleskip",
+      "oozeling","marshpaw","knotnose","tideling","drip-tail",
+      "slickstep","sandwhisper","brinefoot","mudflick"
+    ]
+  },
+
+  "titles": [
+    "the Tide-Skipper","the Foam-Chitter","the Brine-Whisk",
+    "the Ripple-Born","the Kelp-Crawler","the Ooze-Bright",
+    "the Marsh-Sigh","the Drift-Watcher","the Mud-Patter",
+    "the Salt-Ear","the Wave-Gleamer","the Pearl-Hider",
+    "the Deep-Nibble","the Shore-Scritch","the Lake-Drifter"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Tide","Drift","Ripple","Brine","Foam","Lagoon","Shore",
+      "Silt","Mud","Wave","Kelp","Marsh","Coral","Reef",
+      "Ooze","Salt","Mist","Bubble","Eddy","Blue"
+    ],
+    "right": [
+      "walker","drifter","gleam","skipper","whisper","tail",
+      "paw","keeper","wader","sipper","shiver","glint",
+      "scale","chitter","bloom","droplet","dreamer"
+    ],
+    "comboWeight": 0.58
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","CVCVC","SCVC","SVCV","CVCEC"
+  ]
+}
+,
+"FIRE": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","r","s","t","v","z",
+    "fl","fr","kr","gr","sh","zh","th","sk","sn","sp"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ia","ao","uu","yr","ei","oa"
+  ],
+
+  "clustersStart": [
+    "fl","fr","kr","gr","sh","zh","th","sk","sn","sp","sm","br","dr","fyr"
+  ],
+  "clustersEnd": [
+    "th","sh","st","sk","rk","rn","rth","zz","rg","rz","spark","shk"
+  ],
+
+  "maleEndings": [
+    "ik","ar","or","ur","en","eth","rak","zor","fyn","grim","drek"
+  ],
+  "femaleEndings": [
+    "a","ia","ira","ara","yna","asha","ael","izra","yra","uuna","ora"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Ember","Spark","Soot","Cinder","Blaze","Scorch","Ash","Flicker",
+      "Glow","Flare","Burntwing","Firemoss","Coalwhisk","Redbloom",
+      "Torchmire","Smoulderfen","Heatroot","Flamecoat","Brimpatch",
+      "Dustfire","Forgeleaf","Singegrass","Flintfur","Charfen"
+    ],
+    "right": [
+      "skitter","flicker","sparkpaw","flitnose","emberling","glowtail",
+      "cinderstep","ashfur","burnsnout","flareborn","whisker",
+      "smokeling","coalclaw","char-hopper","glowwhisper",
+      "fusepaw","heat-nibbler","scorchling","dustwhisk"
+    ]
+  },
+
+  "titles": [
+    "the Ember-Skipper","the Little Flame-Tongue","the Soot-Runner",
+    "the Spark-Bound","the Fire-Nibbler","the Cinder-Curled",
+    "the Glow-Creeper","the Ash-Whisper","the Flicker-Born",
+    "the Coal-Twitch","the Scorch-Squeak","the Heat-Peeler",
+    "the Brim-Glow","the Torch-Quick","the Char-Hopper"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Ember","Spark","Flame","Cinder","Ash","Soot","Glow","Blaze",
+      "Scorch","Heat","Fire","Brim","Torch","Burn","Coal",
+      "Flicker","Red","Melt","Singe"
+    ],
+    "right": [
+      "whisk","tail","skipper","runner","gleam","paw","nibbler",
+      "hopper","whisper","chitter","searling","bound","glint",
+      "curl","drifter","flareling"
+    ],
+    "comboWeight": 0.52
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","CVCVC","SCVC","SVCV","CVCEC"
+  ]
+}
+
+
+}
