@@ -132,13 +132,6 @@ export function buildBlendedPool(themePoolsToBlend : NonEmptyArray<themePool>)
   return newBlendPool;
 }
 
-export interface ThemeSet {
-    EARTH: themePool;
-    AIR: themePool;
-    WATER: themePool;
-    FIRE: themePool;
-    MIXED: themePool;
-}
 
 export function returnThemeSet(themeJson : Record<string, unknown>, theme : string) 
 {
@@ -160,3 +153,13 @@ export function returnThemeSet(themeJson : Record<string, unknown>, theme : stri
 
 
 }
+
+export function buildThemeSet(themeJson: Record<string, unknown>): Record<string, themePool> {
+    const earth = makeThemePool(themeJson.EARTH);
+    const water = makeThemePool(themeJson.WATER);
+    const fire  = makeThemePool(themeJson.FIRE);
+    const air   = makeThemePool(themeJson.AIR);
+    const mix   = makeThemePool(buildBlendedPool([earth, water, fire, air]));
+  
+    return { earth, water, fire, air, mix };
+  }

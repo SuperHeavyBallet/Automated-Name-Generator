@@ -1,0 +1,273 @@
+{
+    "EARTH": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","p","r","s","t","v","z",
+    "gr","kr","br","dr","tr","gn","sn","sm","cl","gl","pl","th",
+    "gh","sk","scr","str","grr","krh","drh"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "aa","oa","ae","uo","au","oi","ur","aa"
+  ],
+
+  "clustersStart": [
+    "gr","kr","br","dr","tr","gn","sk","scr","str","gl","cl","sm","sn",
+    "grr","krh","drh","thl","ghr","klh"
+  ],
+  "clustersEnd": [
+    "nk","nt","mp","lm","ld","rd","rt","rg","rn","sk","st","zz","sh",
+    "gr","gh","rgh","ldr","rnk","mth"
+  ],
+
+  "maleEndings": [
+    "gor","grath","drak","orn","rak","gorn","thrum","krall","uz","grin","morr"
+  ],
+  "femaleEndings": [
+    "a","ira","ora","urra","gana","grissa","thra","una","mora","yrra"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Stone","Rock","Boulder","Gravel","Fang","Cliff","Rift","Chasm",
+      "Deepmaw","Earthshard","Dusthide","Mudtusk","Cragborn","Hollowfang",
+      "Pitbreaker","Bonepile","Grimroot","Shardclaw","Rubbleback","Earthbite",
+      "Gloomtread","Basaltmaw","Gravelthroat","Tremorhorn","Groundsplit"
+    ],
+    "right": [
+      "crusher","breaker","gnasher","gore","rend","mauler","shatter",
+      "burrower","earthbound","stonewalker","bonesplitter","dustheart",
+      "grimjaw","soilmangler","darkstride","gritclaw","hollowstride"
+    ]
+  },
+
+  "titles": [
+    "the Earth-Howler","the Stone-Eater","the Deep-Bound",
+    "the Boulder-Treader","the Gravel-Maw","the Rift-Gnawer",
+    "the Cavern-Beast","the Hollow Tyrant","the Tremor-Fang",
+    "the Mud Reaver","the Dust Devourer","the Crag-Watcher",
+    "the Spine-Grinder","the Burrowed King","the Iron-Lunged"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Stone","Rock","Deep","Gravel","Mud","Dust","Chasm","Cave",
+      "Rift","Crag","Earth","Soil","Hollow","Bone","Basalt",
+      "Shard","Iron","Grit","Fang","Tremor","Ground","Gloom"
+    ],
+    "right": [
+      "maw","beast","wrecker","howler","crusher","eater","walker","tyrant",
+      "devourer","breaker","gnasher","stalker","warmer","lurker","shaker",
+      "strider","jaw","rumbler","watcher"
+    ],
+    "comboWeight": 0.45
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","SCCV","CVCVC","SCVC","CVCEC","SVCVC"
+  ]
+},
+"FIRE": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","p","r","s","t","v","z",
+    "fl","fr","kr","gr","br","dr","sn","sp","sh","zh","th",
+    "fyr","skr","grh","krh","brh","drh","hr"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ia","ao","yr","uu","ei","oa","ur"
+  ],
+
+  "clustersStart": [
+    "fl","fr","kr","gr","br","dr","sh","zh","skr","grh","krh",
+    "fyr","smr","thr","hrm","blaz","scor"
+  ],
+  "clustersEnd": [
+    "th","sh","st","sk","rk","rn","rz","zz","rth","rg","sm","fyr","ash","flame"
+  ],
+
+  "maleEndings": [
+    "rak","zor","grath","drak","fyrn","vorn","kaz","thraz","grim","uzor","marr"
+  ],
+  "femaleEndings": [
+    "a","ira","yra","ael","asha","unna","izra","ora","uura","fyra"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Flame","Blaze","Inferno","Cinder","Scorch","Ash","Soot","Coal",
+      "Ember","Torch","Smoke","Furnace","Brimstone","Magma","Pyre",
+      "Charfang","Burntclaw","Heatmaw","Moltenhide","Fireglass",
+      "Lavafell","Redspine","Singepeak","Blisterroot","Forgeback"
+    ],
+    "right": [
+      "crusher","burner","mauler","scorcher","charwalker","flameborn",
+      "embergnaw","pyreheart","moltenjaw","magma-stalker",
+      "heat-rend","cinderstride","torchbreaker","smokehowl",
+      "ashclaw","brimreaver","lava-seeker"
+    ]
+  },
+
+  "titles": [
+    "the Flame Tyrant","the Cinder-Howler","the Blazeborn Hulk",
+    "the Pyre Devourer","the Ash-Fanged","the Furnace-Heart",
+    "the Ember Titan","the Soot Reaver","the Molten Colossus",
+    "the Magma Wraith","the Scorch-Maddened","the Brimstone Gorger",
+    "the Fire-Drinker","the Torch-Spawned","the Infernal Harrow"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Flame","Blaze","Inferno","Cinder","Ash","Soot","Coal","Ember",
+      "Pyre","Furnace","Brimstone","Magma","Lava","Molten","Scorch",
+      "Heat","Torch","Smoke","Burn","Char","Hellfire","Red"
+    ],
+    "right": [
+      "maw","tyrant","wrecker","howler","crusher","devourer","walker",
+      "reaver","gore","breaker","stalker","wyrm","colossus","lurker",
+      "flayer","searborn","jaw","rager","bringer"
+    ],
+    "comboWeight": 0.5
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","SCCV","CVCVC","SCVC","CVCEC","SVCVC","FVCV"
+  ]
+}
+,
+"WATER": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","p","r","s","t","v","w","z",
+    "sl","gl","dr","cl","sw","sh","ch","wh","br","gr","kr",
+    "spl","spr","thr","glr","dhr","mrl"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "aa","oo","ua","io","eo","uu","oa","ae","ur","ou"
+  ],
+
+  "clustersStart": [
+    "sl","gl","cl","dr","sw","sh","wh","ch","spr","spl","dro","glr",
+    "krw","brw","mrr","glh","dhr","swol"
+  ],
+  "clustersEnd": [
+    "sh","ch","th","zz","ss","sk","rk","rn","msh","rsh","gl","gth",
+    "rnk","murr","slk","drown"
+  ],
+
+  "maleEndings": [
+    "un","or","um","il","ol","ar","ath","mur","glon","born","urrn"
+  ],
+  "femaleEndings": [
+    "a","ia","ila","ora","una","asha","oona","ira","eia","ulla","mora"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Tide","Flood","River","Swamp","Marsh","Abyss","Brine","Coral",
+      "Reef","Undertow","Drownfang","Murkhide","Bogmaw","Sloughback",
+      "Saltborn","Deepcoil","Lagoonclaw","Mistdrift","Foamspine",
+      "Kelpmaw","Oozeheart","Mudfell","Gloomwater","Whirlpool"
+    ],
+    "right": [
+      "crusher","drowner","mauler","gulper","scale-reaver",
+      "undertreader","riptide","slough-gnawer","foam-fiend",
+      "marsh-stalker","ooze-crawler","kelpclaw","brinebreaker",
+      "bog-lurker","tide-tearer","deep-swallower","slime-rend"
+    ]
+  },
+
+  "titles": [
+    "the Abyss-Spawned","the Bog Colossus","the Tide-Mauler",
+    "the Marsh Leviathan","the Drowned Gnasher","the Undertow King",
+    "the Brine Devourer","the Deep-Bellowed","the Foam Tyrant",
+    "the Mire-Walker","the Riverbreaker","the Slough Titan",
+    "the Salt-Eater","the Kelp Wyrm","the Flood-Crowned"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Tide","Flood","Brine","Abyss","Deep","Marsh","River","Bog",
+      "Swamp","Foam","Kelp","Coral","Reef","Undertow","Salt",
+      "Mist","Silt","Lagoon","Drown","Ooze","Gloom","Current"
+    ],
+    "right": [
+      "maw","leviathan","tyrant","crusher","walker","breaker",
+      "devourer","gnasher","stalker","wyrm","lurker","harrower",
+      "reaver","swallower","wrecker","jaw","serpent","treader"
+    ],
+    "comboWeight": 0.48
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","SCCV","CVCVC","SCVC","CVCEC","SVCVC","CVVV"
+  ]
+}
+,
+"AIR": {
+  "consonants": [
+    "b","d","f","g","h","k","l","m","n","p","r","s","t","v","w","y","z",
+    "fl","fr","sl","sw","sh","wh","sk","str","scl","cr","gr","cl","thr","shr"
+  ],
+  "vowels": [
+    "a","e","i","o","u",
+    "ae","ai","ia","ei","ui","uu","yo","eo","ie"
+  ],
+
+  "clustersStart": [
+    "fl","fr","sl","sw","sh","wh","cr","gr","cl","sk","str","thr","shr",
+    "scl","scr","whirl","glide","storm","gale"
+  ],
+  "clustersEnd": [
+    "th","sh","ss","zz","st","sk","rf","lf","rn","rl","wh","sse","gale","shriek"
+  ],
+
+  "maleEndings": [
+    "in","ir","el","en","ith","ryn","ael","wyn","is","or","vyr"
+  ],
+  "femaleEndings": [
+    "a","ia","ela","ira","eia","aera","sha","yna","uith","ora","lyra"
+  ],
+
+  "lastNamePieces": {
+    "left": [
+      "Storm","Gale","Wind","Sky","Cloud","Tempest","Squall",
+      "Hurricane","Thunder","Zephyr","Highwing","Mistreach",
+      "Whirlclaw","Stormpeak","Airfang","Gusthide","Cliffborn",
+      "Crytalon","Skymaw","Sheercliff","Hollowpeak","Brightwind"
+    ],
+    "right": [
+      "ripper","screamer","talon","shriekmaw","stormjaw","windreaver",
+      "cloudbiter","skyhowler","gale-treader","peaksunder","riftwing",
+      "airstalker","thunderborn","zephyrclaw","tempestjaw","gustbreaker"
+    ]
+  },
+
+  "titles": [
+    "the Sky-Ripper","the Cloud Tyrant","the Storm-Spawned",
+    "the Wind Devourer","the Gale Wraith","the Shriekbound",
+    "the Cliff-Howler","the Highwing Colossus","the Thunder Maw",
+    "the Tempest Walker","the Air-Worn Horror","the Rift Shrieker",
+    "the Cyclone-Born","the Storm-Crowned","the Skyflayer"
+  ],
+
+  "titlePieces": {
+    "left": [
+      "Storm","Gale","Sky","Wind","Tempest","Cloud","Thunder",
+      "Rift","Hurricane","Zephyr","Cyclone","Squall","Mist",
+      "Air","Whirl","Shear","Peak","Gust","Light","Bright"
+    ],
+    "right": [
+      "maw","wraith","tyrant","crusher","devourer","ripper","howler",
+      "strider","breaker","shrieker","flayer","stalker","wing",
+      "talon","reaver","treader","jaw","harrow"
+    ],
+    "comboWeight": 0.52
+  },
+
+  "patterns": [
+    "CVC","SCV","CVCV","SCCV","CVCVC","SCVC","CVCEC","SVCVC","SVVC"
+  ]
+}
+
+
+}

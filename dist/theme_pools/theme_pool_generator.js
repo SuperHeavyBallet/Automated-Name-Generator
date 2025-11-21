@@ -133,4 +133,12 @@ export function returnThemeSet(themeJson, theme) {
             break;
     }
 }
+export function buildThemeSet(themeJson) {
+    const earth = makeThemePool(themeJson.EARTH);
+    const water = makeThemePool(themeJson.WATER);
+    const fire = makeThemePool(themeJson.FIRE);
+    const air = makeThemePool(themeJson.AIR);
+    const mix = makeThemePool(buildBlendedPool([earth, water, fire, air]));
+    return { earth, water, fire, air, mix };
+}
 //# sourceMappingURL=theme_pool_generator.js.map
