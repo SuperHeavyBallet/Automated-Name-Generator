@@ -68,5 +68,199 @@
         "patterns": [
             "CVC", "CVCV", "CVCCV", "SCVC", "SCVCV", "CVCVC", "CVVC", "CVVCV", "SV", "SVCV", "CVCCVC"
         ]
+    },
+    "FIRE": {
+        "consonants": [
+            "b", "d", "f", "g", "h", "k", "l", "m", "n", "r", "s", "t", "v", "z",
+            "br", "dr", "fr", "gr", "kr", "pr", "tr", "vr",
+            "fl", "bl", "gl", "pl", "cl",
+            "sc", "sk", "sp", "st", "th",
+            "fl", "fyr", "brn", "crn"
+        ],
+        "vowels": [
+            "a", "e", "i", "o", "u",
+            "ae", "ea", "ia", "io", "oi", "ou", "ui", "ei", "au", "oa", "ue", "eo",
+            "aa", "ai", "yr"
+        ],
+        "clustersStart": [
+            "br", "dr", "fr", "gr", "kr", "pr", "tr", "vr",
+            "fl", "fyr", "bl", "gl", "cr", "sc", "sk"
+        ],
+        "clustersEnd": [
+            "rd", "rt", "rn", "rm", "rl", "rk", "rg",
+            "ld", "lt", "lm", "lk",
+            "nd", "nt", "ng",
+            "st", "sk", "sp",
+            "th", "x", "z",
+            "fyr", "flame", "brand"
+        ],
+        "maleEndings": [
+            "ar", "or", "ur", "yr", "an", "on", "os", "ion", "ior", "azar", "akar", "reth", "garn", "vyr", "dras", "brand"
+        ],
+        "femaleEndings": [
+            "a", "ia", "ara", "ira", "yra", "una", "essa", "irae", "astra", "eth", "is", "wyn", "lyn", "thea", "arae", "pyra"
+        ],
+        "lastNamePieces": {
+            "left": [
+                "Fire", "Flame", "Blaze", "Ash", "Ember", "Cinder", "Coal", "Pyre", "Spark", "Torch", "Inferno", "Fury", "Scorch", "Burn",
+                "Iron", "Steel", "Forged", "Molten", "Brass", "Copper", "Bronze", "Emberborn", "Sun", "Dawn", "Radiant", "Crimson", "Scarlet", "Saffron",
+                "Dragon", "Drake", "Phoenix", "Salamander", "Serpent", "Lion", "Hawk", "Falcon", "Raven", "Wolf",
+                "Hammer", "Anvil", "Forge", "Brand", "Furnace"
+            ],
+            "right": [
+                "fire", "flame", "blaze", "brand", "burn", "spark", "cinder", "ember", "forge", "hammer", "anvil",
+                "rider", "runner", "walker", "watch", "keeper", "bearer", "breaker", "sunder", "warden", "fang",
+                "heart", "hand", "crown", "light", "flame", "star", "oath", "wrath", "glory", "valor"
+            ]
+        },
+        "titles": [
+            "the Flame-Taker", "the Ember-Born", "the Firebrand", "the Scorching Hand", "the Inferno-Wreathed",
+            "the Dawn-Fury", "the Phoenix-Caller", "the Dragon’s Breath", "the Cinder-Knight",
+            "the Hammer of Embers", "the Blazing Sentinel", "the Pyre-Warden", "the Heat of Day",
+            "the Molten Shield", "the Crimson Spark", "the Ever-Burning", "the Furnace-Hearted",
+            "the Ignited", "the Searing", "the Unquenched"
+        ],
+        "titlePieces": {
+            "left": [
+                "Flame", "Fire", "Blaze", "Ash", "Ember", "Cinder", "Inferno", "Pyre", "Burning", "Scorching", "Molten", "Furnace",
+                "Sun", "Dawn", "Day", "Crimson", "Scarlet", "Golden", "Radiant", "Bright",
+                "Dragon", "Phoenix", "Drake", "Serpent", "Lion", "Stag", "Hawk",
+                "Iron", "Steel", "Bronze", "Hammer", "Forge", "Anvil"
+            ],
+            "right": [
+                "hero", "champion", "knight", "warden", "guardian", "keeper", "watcher", "caller", "bearer", "breaker",
+                "sword", "shield", "spear", "hammer", "blade", "brand", "flame", "voice", "heart", "hand", "crown", "strider"
+            ],
+            "comboWeight": 0.5
+        },
+        "patterns": [
+            "CVC", "CVCV", "CVCCV", "SCVC", "SCVCV", "CVCVC", "CVVC", "CVVCV", "SV", "SVCV", "CVCCVC"
+        ]
+    },
+    "WATER": {
+        "consonants": [
+            "b", "d", "f", "g", "h", "k", "l", "m", "n", "r", "s", "t", "v", "w", "y",
+            "bl", "br", "cl", "cr", "dr", "fl", "fr", "gl", "gr", "pl", "pr", "sl", "sm", "sn", "sw",
+            "th", "sh", "sk", "sc", "sl", "sr", "st"
+        ],
+        "vowels": [
+            "a", "e", "i", "o", "u",
+            "ae", "ea", "ia", "ie", "io", "oi", "ou", "ui", "uu", "ei", "eo", "oa", "oe", "ua"
+        ],
+        "clustersStart": [
+            "sl", "sh", "sw", "gl", "gr", "cl", "cr", "dr", "fl", "fr", "bl", "br", "pl", "pr",
+            "th", "sc", "sk"
+        ],
+        "clustersEnd": [
+            "rd", "rt", "rn", "rm", "rl",
+            "ld", "lt", "lm", "lk",
+            "nd", "nt", "ng",
+            "st", "sk", "sp",
+            "sh", "th", "ss", "nz", "rs"
+        ],
+        "maleEndings": [
+            "an", "ar", "on", "or", "en", "el", "ion", "ior", "os", "as", "eth", "mar", "mir", "ryn", "thal", "dor", "mos", "len"
+        ],
+        "femaleEndings": [
+            "a", "ia", "ina", "ira", "ela", "elle", "ora", "una", "eth", "is", "ys", "lyn", "wyn", "thea", "arae", "essa", "sera", "thalyn"
+        ],
+        "lastNamePieces": {
+            "left": [
+                "River", "Brook", "Stream", "Tide", "Wave", "Surge", "Flood", "Storm", "Rain", "Mist", "Fog", "Gale", "Tempest",
+                "Sea", "Ocean", "Deep", "Abyss", "Reef", "Coral", "Shell", "Pearl", "Foam", "Spray",
+                "Blue", "Azure", "Silver", "Teal", "Sapphire", "Opal",
+                "Whale", "Shark", "Seal", "Eel", "Ray", "Dolphin", "Kraken", "Serpent", "Leviathan",
+                "Drift", "Current", "Flow", "Lagoon", "Harbor", "Crest"
+            ],
+            "right": [
+                "flow", "tide", "wave", "crest", "deep", "foam", "spray", "song", "call", "wake",
+                "walker", "swimmer", "sailor", "watch", "keeper", "warden", "runner", "diver",
+                "fang", "heart", "hand", "helm", "oath", "horizon", "calm", "wind", "storm", "gleam"
+            ]
+        },
+        "titles": [
+            "the Tide-Walker", "the Wave-Born", "the Stormcaller", "the Deep-Seer", "the Whisper of Tides",
+            "the Flood-Bound", "the Crest of Dawn", "the Gale-Knight", "the Rain-Singer",
+            "the Tempest-Breaker", "the Abyss-Warden", "the Pearl of the Shoals",
+            "the Calm-Eyed", "the Storm-Ridden", "the Sea-Willed",
+            "the Leviathan-Hewer", "the Drift-Sage", "the Foam-Crowned"
+        ],
+        "titlePieces": {
+            "left": [
+                "River", "Sea", "Ocean", "Abyss", "Deep", "Mist", "Rain", "Storm", "Wave", "Tide", "Gale", "Tempest", "Surge",
+                "Azure", "Blue", "Silver", "Opal", "Sapphire",
+                "Serpent", "Kraken", "Ray", "Shark", "Whale",
+                "Drift", "Flow", "Current", "Crest", "Pearl", "Foam", "Shell", "Coral"
+            ],
+            "right": [
+                "keeper", "warden", "caller", "seer", "watcher", "singer", "walker", "rider", "strider",
+                "blade", "shield", "spear", "hand", "heart", "voice", "crest", "wind", "helm", "tide"
+            ],
+            "comboWeight": 0.5
+        },
+        "patterns": [
+            "CVC", "CVCV", "CVCCV", "SCVC", "SCVCV", "CVCVC", "CVVC", "CVVCV", "SV", "SVCV", "CVCCVC"
+        ]
+    },
+    "AIR": {
+        "consonants": [
+            "b", "c", "d", "f", "g", "h", "k", "l", "m", "n", "p", "r", "s", "t", "v", "w", "y", "z",
+            "br", "cr", "dr", "fr", "gr", "pr", "tr", "vr",
+            "fl", "sl", "pl", "cl", "gl", "bl",
+            "sk", "sc", "st", "th", "wh", "sw"
+        ],
+        "vowels": [
+            "a", "e", "i", "o", "u",
+            "ae", "ea", "ia", "ie", "io", "oi", "ou", "ui", "ei", "eo", "ai", "au", "ya", "iya"
+        ],
+        "clustersStart": [
+            "wh", "sw", "sk", "st", "th", "fr", "fl", "sl", "gl", "cl", "bl", "tr", "pr", "cr", "dr"
+        ],
+        "clustersEnd": [
+            "rd", "rt", "rn", "rl",
+            "ld", "lt", "lk", "lm",
+            "nd", "nt", "ng",
+            "st", "sk", "sp",
+            "th", "ss", "syl", "wyn"
+        ],
+        "maleEndings": [
+            "an", "ar", "or", "en", "el", "ion", "ior", "as", "is", "yr", "aros", "ael", "wyn", "ther", "vyr", "riel"
+        ],
+        "femaleEndings": [
+            "a", "ia", "ela", "elle", "ira", "ina", "ora", "una", "is", "eth", "ys", "wyn", "lyn", "thea", "arae", "aera", "syl"
+        ],
+        "lastNamePieces": {
+            "left": [
+                "Sky", "Cloud", "Wind", "Storm", "Gale", "Breeze", "Whisper", "Zephyr", "Horizon", "Dawn", "Sun",
+                "Star", "Comet", "Aurora", "Nimbus", "Vapor", "Mist", "Echo",
+                "Hawk", "Falcon", "Eagle", "Kite", "Sparrow", "Osprey", "Raven",
+                "High", "Bright", "Silver", "Pale", "Swift", "True", "Free"
+            ],
+            "right": [
+                "wing", "flight", "soar", "glide", "strider", "walker", "rider", "watch", "keeper", "warden",
+                "crest", "gleam", "whisper", "sigh", "song", "shine", "wind", "sky", "light", "spark"
+            ]
+        },
+        "titles": [
+            "the Skyborne", "the Gale-Walker", "the Whispering Blade", "the Cloud-Strider", "the Wind-Touched",
+            "the Storm’s Herald", "the Dawn’s Crest", "the Lark-Knight", "the Horizon-Seer",
+            "the High Sentinel", "the Upper Gale", "the Sky-Warden", "the Aerial Oath",
+            "the Zephyr’s Voice", "the Star-Walker", "the Silver Current", "the Unbound"
+        ],
+        "titlePieces": {
+            "left": [
+                "Sky", "Cloud", "Wind", "Gale", "Storm", "Zephyr", "Horizon", "Star", "Dawn", "Mist", "Echo", "Vapor",
+                "Hawk", "Falcon", "Eagle", "Sparrow", "Raven",
+                "Silver", "Pale", "Bright", "High", "Swift"
+            ],
+            "right": [
+                "keeper", "warden", "walker", "watcher", "strider", "seer", "caller", "singer",
+                "blade", "spear", "shield", "wing", "wind", "heart", "voice", "banner"
+            ],
+            "comboWeight": 0.5
+        },
+        "patterns": [
+            "CVC", "CVCV", "CVCCV", "SCVC", "SCVCV", "CVCVC", "CVVC", "CVVCV", "SV", "SVCV", "CVCCVC"
+        ]
     }
 }
